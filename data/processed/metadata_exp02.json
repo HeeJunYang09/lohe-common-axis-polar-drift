@@ -1,0 +1,21 @@
+{
+  "C_tol": 5.0,
+  "K_representative": 12.0,
+  "K_values": [
+    8.0,
+    10.0,
+    12.0,
+    15.0,
+    20.0,
+    30.0,
+    40.0
+  ],
+  "N": 48,
+  "c_init": 0.3,
+  "cache_file": "data/cache/fig02_phase_gap_prediction.npz",
+  "figure": "Figure 2",
+  "fitted_slope": 2.0097912581741735,
+  "phi0": 0.85,
+  "sigma_omega": 0.15,
+  "theta0": 0.3
+}

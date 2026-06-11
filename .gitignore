@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.env
+.venv/
+outputs_tmp/
+scratch/
+*.log
+figures/*.png
+figures/*.eps

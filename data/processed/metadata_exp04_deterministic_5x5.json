@@ -1,0 +1,36 @@
+{
+  "C_tol": 5.0,
+  "K_values": [
+    6.0,
+    7.5,
+    9.0,
+    10.5,
+    12.0
+  ],
+  "N": 28,
+  "all_fast_thresholds_reached": true,
+  "all_hitting_thresholds_reached": true,
+  "c_init": 0.3,
+  "cache_file": "data/cache/fig04_hitting_time_deterministic_5x5.npz",
+  "eta": 0.82,
+  "figure": "Figure 4",
+  "figure_stem": "fig4_hitting_time_deterministic",
+  "frequency_mode": "deterministic",
+  "grid_tag": "5x5",
+  "max_relative_error": 0.015598270986889118,
+  "mean_relative_error": 0.0038336586032315205,
+  "metadata_file": "data/processed/metadata_exp04_deterministic_5x5.json",
+  "phi0": 0.85,
+  "relative_L2_error": 0.0027432415792258092,
+  "rho_max": 0.100275482615608,
+  "rho_min": 0.027854300726557788,
+  "sigma_values": [
+    0.2,
+    0.24,
+    0.28,
+    0.32,
+    0.36
+  ],
+  "summary_file": "data/processed/summary_exp04_hitting_time_deterministic_5x5.csv",
+  "theta0": 0.3
+}

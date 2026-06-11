@@ -1,0 +1,18 @@
+{
+  "C_tol": 5.0,
+  "K_values": [
+    10.0,
+    15.0,
+    22.5,
+    30.0
+  ],
+  "N": 128,
+  "atol": 1e-11,
+  "c_init": 0.3,
+  "cache_file": "data/cache/fig01_fast_locking.npz",
+  "figure": "Figure 1",
+  "phi0": 0.85,
+  "rtol": 1e-09,
+  "sigma_omega": 0.15,
+  "theta0": 0.3
+}

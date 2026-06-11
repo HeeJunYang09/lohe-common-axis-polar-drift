@@ -1,0 +1,17 @@
+Phase-gap prediction diagnostic
+N = 48
+K = 12
+sigma_omega = 0.15
+rho = 0.0212041822983
+t_f_num = 0.0875536575913
+max residual = 0.00111294218723
+max residual / rho^2 = 2.47530971572
+R_gap / rho^2 range = 2.44116349906, 2.51607395834
+log-log fitted slope = 2.00979125817
+locked-profile residual = 5.55111512313e-16
+max_i |delta_i/K - vartheta_i| = 3.24673724963e-06
+sphere_norm_error = 2.38418579102e-06
+theta0 = 0.3
+phi0 = 0.85
+c_init = 0.3
+C_tol = 5

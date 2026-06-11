@@ -1,0 +1,71 @@
+Reproduction check
+==================
+
+Date: 2026-06-11
+Working directory: repository root
+Conda environment: py3_9
+
+Detected versions
+-----------------
+Python: 3.9.21
+JAX: 0.4.23
+JAXlib: 0.4.23 (installed CUDA build: 0.4.23+cuda11.cudnn86)
+Diffrax: 0.5.0
+NumPy: 1.26.4
+SciPy: 1.12.0
+Matplotlib: 3.9.2
+
+Commands tested from the repository root
+----------------------------------------
+python scripts/fig01_fast_locking.py
+python scripts/fig02_phase_gap_prediction.py
+python scripts/fig03_slow_polar_drift.py
+python scripts/fig04_hitting_time.py
+python scripts/fig05_gaussian_robustness.py
+
+For this check, "python" was the interpreter from the py3_9 Conda
+environment. MPLBACKEND=Agg and writable temporary MPLCONFIGDIR directories
+were used for headless execution.
+
+Results
+-------
+PASS: scripts/fig01_fast_locking.py
+PASS: scripts/fig02_phase_gap_prediction.py
+PASS: scripts/fig03_slow_polar_drift.py
+PASS: scripts/fig04_hitting_time.py
+PASS: scripts/fig05_gaussian_robustness.py
+
+All scripts loaded the included cache files. No numerical simulation was
+recomputed during this check. All five manuscript figure PDFs were generated
+successfully from the included processed data/cache files.
+
+Generated final PDFs
+--------------------
+figures/fig1_fast_locking.pdf
+figures/fig2_phase_gap_prediction.pdf
+figures/fig3_slow_polar_drift_deterministic.pdf
+figures/fig4_hitting_time_deterministic.pdf
+figures/fig5_gaussian_robustness.pdf
+
+Rendering check
+---------------
+Local author check: generated PNG files matched the final manuscript figure
+references used by the authors.
+
+Manuscript consistency check
+----------------------------
+PASS: the manuscript figure values are consistent with the processed data in
+this repository after rounding.
+
+Path and cleanup check
+----------------------
+PASS: no local absolute paths were found in public repository files.
+PASS: no stale journal/style or draft-comment phrases were found in
+public-facing files.
+
+Notes
+-----
+The Matplotlib PostScript backend warns that transparency is rendered opaque
+when saving EPS for Figures 1 and 5. PDF and PNG generation succeeded.
+
+No GitHub push was attempted.

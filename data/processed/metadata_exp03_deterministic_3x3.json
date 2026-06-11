@@ -1,0 +1,44 @@
+{
+  "C_tol": 5.0,
+  "D_over_Lambda_max": 0.999923963060842,
+  "D_over_Lambda_mean": 0.9997112428908833,
+  "D_over_Lambda_min": 0.9993163899855351,
+  "N": 32,
+  "all_fast_thresholds_reached": true,
+  "c_init": 0.3,
+  "cache_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+  "figure": "Figure 3",
+  "frequency_mode": "deterministic",
+  "panel_a_pairs": [
+    [
+      8.0,
+      0.18
+    ],
+    [
+      10.0,
+      0.2
+    ],
+    [
+      12.0,
+      0.22
+    ]
+  ],
+  "panel_b_K_values": [
+    8.0,
+    10.0,
+    12.0
+  ],
+  "panel_b_sigma_values": [
+    0.16,
+    0.2,
+    0.24
+  ],
+  "phi0": 0.85,
+  "relative_drift_error_max": 0.0006836100144649304,
+  "relative_drift_error_mean": 0.0002887571091166885,
+  "rho_max": 0.05036232357987106,
+  "rho_min": 0.022383254924387145,
+  "seeds": [],
+  "summary_file": "data/processed/summary_exp03_slow_polar_drift_deterministic_3x3.csv",
+  "theta0": 0.3
+}

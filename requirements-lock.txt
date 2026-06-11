@@ -1,0 +1,18 @@
+# Tested numerical stack from the Environment: Python 3.9.21 with the package versions listed below
+# Python version: 3.9.21
+# The tested machine used jaxlib 0.4.23+cuda11.cudnn86; the portable release
+# number is pinned below because CUDA wheel selection is platform-specific.
+numpy==1.26.4
+scipy==1.12.0
+matplotlib==3.9.2
+cycler==0.11.0
+jax==0.4.23
+jaxlib==0.4.23
+diffrax==0.5.0
+equinox==0.11.10
+lineax==0.0.4
+optimistix==0.0.7
+jaxtyping==0.2.36
+typing_extensions==4.12.2
+ml_dtypes==0.5.0
+opt_einsum==3.4.0
