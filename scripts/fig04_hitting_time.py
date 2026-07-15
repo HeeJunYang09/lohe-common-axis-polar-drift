@@ -4,13 +4,19 @@
 #%%
 # Imports and project paths
 import csv
+import os
 import sys
 from pathlib import Path
+
+from jax import config as jax_config
+
+jax_config.update("jax_enable_x64", True)
 
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.ticker import FormatStrFormatter
 import matplotlib.pyplot as plt
 import numpy as np
+import jax
 
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent
@@ -47,9 +53,11 @@ plt.rcParams.update(
 
 #%%
 # Parameters. Change only FREQUENCY_MODE to switch between the two figures.
-RECOMPUTE = False
-FREQUENCY_MODE = "deterministic"  # "deterministic" or "gaussian"
+RECOMPUTE = os.environ.get("FIG04_RECOMPUTE", "0") == "1"
+FREQUENCY_MODE = os.environ.get("FIG04_FREQUENCY_MODE", "deterministic")  # "deterministic" or "gaussian"
 # FREQUENCY_MODE = "gaussian"  # "deterministic" or "gaussian"
+SCHEMA_VERSION = "fig04_hitting_time_x64_v2"
+PRECISION_MODE = "x64"
 
 N = 28
 K_VALUES = np.array([6.0, 7.5, 9.0, 10.5, 12.0])
@@ -63,8 +71,8 @@ C_INIT = 0.30
 C_TOL = 5.0
 T1 = 300.0
 NUM_SAVE = 2200
-RTOL = 1.0e-7
-ATOL = 1.0e-9
+RTOL = 1.0e-9
+ATOL = 1.0e-11
 
 FIGURE_DIR = PROJECT_ROOT / "figures"
 CACHE_DIR = PROJECT_ROOT / "data" / "cache"
@@ -91,6 +99,37 @@ elif FREQUENCY_MODE == "gaussian":
     ROBUSTNESS_FIGURE_STEM = "fig4_hitting_time_gaussian_robustness"
 else:
     raise ValueError(f"Unknown FREQUENCY_MODE: {FREQUENCY_MODE}")
+
+if not bool(jax.config.jax_enable_x64):
+    raise RuntimeError("Figure 4 requires JAX x64 precision.")
+
+
+def _cache_string(value):
+    return str(np.asarray(value).item())
+
+
+def _cache_float(value):
+    return float(np.asarray(value).item())
+
+
+def cache_matches_current_schema(cache):
+    required = {
+        "schema_version", "precision_mode", "jax_x64", "rtol", "atol",
+        "time_dtype", "state_dtype", "frequency_mode", "K_values", "sigma_values",
+        "T_sim", "T_pred", "relative_error", "sphere_norm_error",
+    }
+    if not required.issubset(set(cache.files)):
+        return False
+    return (
+        _cache_string(cache["schema_version"]) == SCHEMA_VERSION
+        and _cache_string(cache["precision_mode"]) == PRECISION_MODE
+        and bool(np.asarray(cache["jax_x64"]).item())
+        and np.isclose(_cache_float(cache["rtol"]), RTOL, rtol=0.0, atol=0.0)
+        and np.isclose(_cache_float(cache["atol"]), ATOL, rtol=0.0, atol=0.0)
+        and _cache_string(cache["time_dtype"]) == "float64"
+        and _cache_string(cache["state_dtype"]) == "float64"
+        and _cache_string(cache["frequency_mode"]) == FREQUENCY_MODE
+    )
 
 #%%
 # One full numerical experiment
@@ -173,14 +212,26 @@ def simulate_case(K, sigma, seed=None):
         "sphere_norm_error": float(result.stats["sphere_norm_error"]),
         "fast_threshold_reached": fast_threshold_reached,
         "hitting_threshold_reached": hitting_threshold_reached,
+        "time_dtype": str(result.ts.dtype),
+        "state_dtype": str(result.xs.dtype),
     }
 
 #%%
 # Load or generate mode-specific data. RECOMPUTE=True regenerates this mode only.
 if CACHE_FILE.exists() and not RECOMPUTE:
-    data = dict(np.load(CACHE_FILE))
-    print("Loaded:", CACHE_FILE)
+    loaded = np.load(CACHE_FILE, allow_pickle=False)
+    if cache_matches_current_schema(loaded):
+        data = dict(loaded)
+        loaded.close()
+        print("Loaded:", CACHE_FILE)
+    else:
+        loaded.close()
+        print("Ignoring stale Figure 4 cache:", CACHE_FILE)
+        data = None
 else:
+    data = None
+
+if data is None:
     if FREQUENCY_MODE == "deterministic":
         records = [
             simulate_case(K, sigma)
@@ -191,6 +242,13 @@ else:
             len(K_VALUES), len(SIGMA_VALUES)
         )
         data = {
+            "schema_version": np.array(SCHEMA_VERSION),
+            "precision_mode": np.array(PRECISION_MODE),
+            "jax_x64": np.array(bool(jax.config.jax_enable_x64)),
+            "rtol": np.array(RTOL),
+            "atol": np.array(ATOL),
+            "time_dtype": np.array(records[0]["time_dtype"]),
+            "state_dtype": np.array(records[0]["state_dtype"]),
             "frequency_mode": np.array(FREQUENCY_MODE),
             "K_values": K_VALUES,
             "sigma_values": SIGMA_VALUES,
@@ -204,6 +262,13 @@ else:
             for sigma in SIGMA_VALUES
         ]
         data = {
+            "schema_version": np.array(SCHEMA_VERSION),
+            "precision_mode": np.array(PRECISION_MODE),
+            "jax_x64": np.array(bool(jax.config.jax_enable_x64)),
+            "rtol": np.array(RTOL),
+            "atol": np.array(ATOL),
+            "time_dtype": np.array(records[0]["time_dtype"]),
+            "state_dtype": np.array(records[0]["state_dtype"]),
             "frequency_mode": np.array(FREQUENCY_MODE),
             "seeds": SEEDS,
             "K_values": K_VALUES,
@@ -324,6 +389,13 @@ if FREQUENCY_MODE == "gaussian":
 metadata = {
     "figure": "Figure 4",
     "frequency_mode": FREQUENCY_MODE,
+    "schema_version": SCHEMA_VERSION,
+    "precision_mode": PRECISION_MODE,
+    "jax_x64": bool(jax.config.jax_enable_x64),
+    "rtol": RTOL,
+    "atol": ATOL,
+    "time_dtype": _cache_string(data["time_dtype"]),
+    "state_dtype": _cache_string(data["state_dtype"]),
     "grid_tag": GRID_TAG,
     "cache_file": CACHE_FILE.relative_to(PROJECT_ROOT),
     "summary_file": SUMMARY_FILE.relative_to(PROJECT_ROOT),

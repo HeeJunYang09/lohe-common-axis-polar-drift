@@ -4,11 +4,17 @@
 #%%
 # Imports and project paths
 import csv
+import os
 import sys
 from pathlib import Path
 
+from jax import config as jax_config
+
+jax_config.update("jax_enable_x64", True)
+
 import matplotlib.pyplot as plt
 import numpy as np
+import jax
 
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent
@@ -47,9 +53,11 @@ plt.rcParams.update(
 
 #%%
 # Parameters. Change only FREQUENCY_MODE to switch figures.
-RECOMPUTE = False
-FREQUENCY_MODE = "deterministic"  # "deterministic" or "gaussian"
+RECOMPUTE = os.environ.get("FIG03_RECOMPUTE", "0") == "1"
+FREQUENCY_MODE = os.environ.get("FIG03_FREQUENCY_MODE", "deterministic")  # "deterministic" or "gaussian"
 # FREQUENCY_MODE = "gaussian"  # "deterministic" or "gaussian"
+SCHEMA_VERSION = "fig03_slow_polar_drift_x64_v2"
+PRECISION_MODE = "x64"
 
 N = 32
 PANEL_A_PAIRS = [(8.0, 0.18), (10.0, 0.20), (12.0, 0.22)]
@@ -63,8 +71,8 @@ C_INIT = 0.30
 C_TOL = 5.0
 T1 = 220.0
 NUM_SAVE = 1800
-RTOL = 1.0e-7
-ATOL = 1.0e-9
+RTOL = 1.0e-9
+ATOL = 1.0e-11
 FIT_PHI_MIN = 0.22
 FIT_PHI_MAX = 0.78
 LEGEND_FONTSIZE = 13
@@ -92,6 +100,38 @@ elif FREQUENCY_MODE == "gaussian":
     FIGURE_STEM = "fig3_slow_polar_drift_gaussian"
 else:
     raise ValueError(f"Unknown FREQUENCY_MODE: {FREQUENCY_MODE}")
+
+if not bool(jax.config.jax_enable_x64):
+    raise RuntimeError("Figure 3 requires JAX x64 precision.")
+
+
+def _cache_string(value):
+    return str(np.asarray(value).item())
+
+
+def _cache_float(value):
+    return float(np.asarray(value).item())
+
+
+def cache_matches_current_schema(cache):
+    required = {
+        "schema_version", "precision_mode", "jax_x64", "rtol", "atol",
+        "time_dtype", "state_dtype", "frequency_mode", "ts", "K_values",
+        "Y", "fit_mask", "panel_b_D_meas", "panel_b_D_meas_over_Lambda_K",
+        "panel_b_sphere_norm_error",
+    }
+    if not required.issubset(set(cache.files)):
+        return False
+    return (
+        _cache_string(cache["schema_version"]) == SCHEMA_VERSION
+        and _cache_string(cache["precision_mode"]) == PRECISION_MODE
+        and bool(np.asarray(cache["jax_x64"]).item())
+        and np.isclose(_cache_float(cache["rtol"]), RTOL, rtol=0.0, atol=0.0)
+        and np.isclose(_cache_float(cache["atol"]), ATOL, rtol=0.0, atol=0.0)
+        and _cache_string(cache["time_dtype"]) == "float64"
+        and _cache_string(cache["state_dtype"]) == "float64"
+        and _cache_string(cache["frequency_mode"]) == FREQUENCY_MODE
+    )
 
 #%%
 # One full numerical experiment
@@ -148,14 +188,26 @@ def simulate(K, sigma, seed=None):
         "fast_threshold_reached": fast_threshold_reached,
         "locked_residual": float(locked_residual),
         "sphere_norm_error": float(result.stats["sphere_norm_error"]),
+        "time_dtype": str(result.ts.dtype),
+        "state_dtype": str(result.xs.dtype),
     }
 
 #%%
 # Load or generate mode-specific data
 if CACHE_FILE.exists() and not RECOMPUTE:
-    data = dict(np.load(CACHE_FILE))
-    print("Loaded:", CACHE_FILE)
+    loaded = np.load(CACHE_FILE, allow_pickle=False)
+    if cache_matches_current_schema(loaded):
+        data = dict(loaded)
+        loaded.close()
+        print("Loaded:", CACHE_FILE)
+    else:
+        loaded.close()
+        print("Ignoring stale Figure 3 cache:", CACHE_FILE)
+        data = None
 else:
+    data = None
+
+if data is None:
     if FREQUENCY_MODE == "deterministic":
         panel_a = [simulate(*pair) for pair in PANEL_A_PAIRS]
         panel_b = [
@@ -175,6 +227,13 @@ else:
         ]
 
     data = {
+        "schema_version": np.array(SCHEMA_VERSION),
+        "precision_mode": np.array(PRECISION_MODE),
+        "jax_x64": np.array(bool(jax.config.jax_enable_x64)),
+        "rtol": np.array(RTOL),
+        "atol": np.array(ATOL),
+        "time_dtype": np.array(panel_a[0]["time_dtype"]),
+        "state_dtype": np.array(panel_a[0]["state_dtype"]),
         "frequency_mode": np.array(FREQUENCY_MODE),
         "ts": panel_a[0]["ts"],
         "K_values": np.array([r["K"] for r in panel_a]),
@@ -238,6 +297,13 @@ errors = data["panel_b_relative_drift_error"]
 metadata = {
     "figure": "Figure 3",
     "frequency_mode": FREQUENCY_MODE,
+    "schema_version": SCHEMA_VERSION,
+    "precision_mode": PRECISION_MODE,
+    "jax_x64": bool(jax.config.jax_enable_x64),
+    "rtol": RTOL,
+    "atol": ATOL,
+    "time_dtype": _cache_string(data["time_dtype"]),
+    "state_dtype": _cache_string(data["state_dtype"]),
     "cache_file": CACHE_FILE.relative_to(PROJECT_ROOT),
     "summary_file": SUMMARY_FILE.relative_to(PROJECT_ROOT),
     "N": N,

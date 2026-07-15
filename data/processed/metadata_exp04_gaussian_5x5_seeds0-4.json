@@ -1,0 +1,104 @@
+{
+  "C_tol": 5.0,
+  "K_values": [
+    6.0,
+    7.5,
+    9.0,
+    10.5,
+    12.0
+  ],
+  "N": 28,
+  "all_fast_thresholds_reached": true,
+  "all_hitting_thresholds_reached": true,
+  "atol": 1e-11,
+  "c_init": 0.3,
+  "cache_file": "data/cache/fig04_hitting_time_gaussian_5x5_seeds0-4.npz",
+  "eta": 0.82,
+  "figure": "Figure 4",
+  "figure_stem": "fig4_hitting_time_gaussian",
+  "frequency_mode": "gaussian",
+  "grid_tag": "5x5",
+  "jax_x64": true,
+  "max_relative_error": 0.008912769185325955,
+  "mean_relative_error": 0.0016685751631242433,
+  "metadata_file": "data/processed/metadata_exp04_gaussian_5x5_seeds0-4.json",
+  "phi0": 0.85,
+  "precision_mode": "x64",
+  "relative_L2_error": 0.0013978951423901417,
+  "rho_max": 0.18463385823453934,
+  "rho_min": 0.03648720981617634,
+  "rtol": 1e-09,
+  "schema_version": "fig04_hitting_time_x64_v2",
+  "seed_metrics": [
+    {
+      "all_fast_thresholds_reached_seed": true,
+      "all_hitting_thresholds_reached_seed": true,
+      "max_relative_error": 0.006565228405462997,
+      "mean_relative_error": 0.0021644926665680274,
+      "relative_L2_error": 0.0014813082605459257,
+      "rho_max_seed": 0.1587673625148094,
+      "rho_min_seed": 0.04410204514300262,
+      "seed": 0
+    },
+    {
+      "all_fast_thresholds_reached_seed": true,
+      "all_hitting_thresholds_reached_seed": true,
+      "max_relative_error": 0.008335074378646785,
+      "mean_relative_error": 0.002491501456032404,
+      "relative_L2_error": 0.0016857734384643384,
+      "rho_max_seed": 0.18463385823453934,
+      "rho_min_seed": 0.0512871828429276,
+      "seed": 1
+    },
+    {
+      "all_fast_thresholds_reached_seed": true,
+      "all_hitting_thresholds_reached_seed": true,
+      "max_relative_error": 0.0004811353650814845,
+      "mean_relative_error": 0.00022045397985993406,
+      "relative_L2_error": 0.00029596665200195475,
+      "rho_max_seed": 0.1569111141687791,
+      "rho_min_seed": 0.04358642060243864,
+      "seed": 2
+    },
+    {
+      "all_fast_thresholds_reached_seed": true,
+      "all_hitting_thresholds_reached_seed": true,
+      "max_relative_error": 0.008912769185325955,
+      "mean_relative_error": 0.003090064768020805,
+      "relative_L2_error": 0.002135535379341306,
+      "rho_max_seed": 0.17015472045860727,
+      "rho_min_seed": 0.04726520012739092,
+      "seed": 3
+    },
+    {
+      "all_fast_thresholds_reached_seed": true,
+      "all_hitting_thresholds_reached_seed": true,
+      "max_relative_error": 0.0010070459066949628,
+      "mean_relative_error": 0.0003763629451400463,
+      "relative_L2_error": 0.00028324253109905407,
+      "rho_max_seed": 0.13135395533823488,
+      "rho_min_seed": 0.03648720981617634,
+      "seed": 4
+    }
+  ],
+  "seed_metrics_file": "data/processed/summary_exp04_hitting_time_gaussian_seed_metrics_5x5_seeds0-4.csv",
+  "seed_tag": "seeds0-4",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "sigma_values": [
+    0.2,
+    0.24,
+    0.28,
+    0.32,
+    0.36
+  ],
+  "state_dtype": "float64",
+  "summary_file": "data/processed/summary_exp04_hitting_time_gaussian_5x5_seeds0-4.csv",
+  "theta0": 0.3,
+  "time_dtype": "float64"
+}

@@ -1,14 +1,16 @@
 {
   "C_tol": 5.0,
-  "D_over_Lambda_max": 0.999923963060842,
-  "D_over_Lambda_mean": 0.9997112428908833,
-  "D_over_Lambda_min": 0.9993163899855351,
+  "D_over_Lambda_max": 0.9999106934703614,
+  "D_over_Lambda_mean": 0.9997102043992511,
+  "D_over_Lambda_min": 0.9993235810617163,
   "N": 32,
   "all_fast_thresholds_reached": true,
+  "atol": 1e-11,
   "c_init": 0.3,
   "cache_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
   "figure": "Figure 3",
   "frequency_mode": "deterministic",
+  "jax_x64": true,
   "panel_a_pairs": [
     [
       8.0,
@@ -34,11 +36,16 @@
     0.24
   ],
   "phi0": 0.85,
-  "relative_drift_error_max": 0.0006836100144649304,
-  "relative_drift_error_mean": 0.0002887571091166885,
+  "precision_mode": "x64",
+  "relative_drift_error_max": 0.0006764189382837404,
+  "relative_drift_error_mean": 0.00028979560074909253,
   "rho_max": 0.05036232357987106,
   "rho_min": 0.022383254924387145,
+  "rtol": 1e-09,
+  "schema_version": "fig03_slow_polar_drift_x64_v2",
   "seeds": [],
+  "state_dtype": "float64",
   "summary_file": "data/processed/summary_exp03_slow_polar_drift_deterministic_3x3.csv",
-  "theta0": 0.3
+  "theta0": 0.3,
+  "time_dtype": "float64"
 }

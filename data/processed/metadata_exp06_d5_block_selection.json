@@ -125,13 +125,15 @@
       1.05
     ]
   },
-  "created_utc": "2026-07-13T04:43:38.610169+00:00",
+  "created_utc": "2026-07-15T14:26:56.792341+00:00",
   "diffrax_version": "0.5.0",
   "dimension": 5,
   "dt0": 0.001,
   "eps_pole": 1e-10,
   "experiment": "d5_block_selection",
   "frequency_mode": "deterministic_independent",
+  "git_commit": "unavailable",
+  "git_dirty": null,
   "initial_block_weights": [
     0.5,
     0.5
@@ -176,7 +178,7 @@
     0.1,
     0.3
   ],
-  "source_fingerprint": "7bdb3b82b011d65d172a1901a6a0bf1e05a7f808aa73abd177cc74ad5194f217",
+  "source_fingerprint": "ac133e807e52e430fe0e2a4a0c4ed51b83d94896a9ebb1cf574a5b0c27648684",
   "tau_max": 18.0,
   "theta_block_values": [
     0.3,

@@ -1,10 +1,10 @@
 {
   "appendix_package_hash": "283a4a5dfca9862b1a7093c700561994ac040325ddf95b6980e5920265cc1b6d",
-  "created_utc": "2026-07-13T04:42:40.944684+00:00",
+  "created_utc": "2026-07-15T13:48:55.688846+00:00",
   "experiment": "appendix_d5_diagnostics",
   "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
   "schema_version": "appendix_d5_metadata_v1",
-  "source_fingerprint": "7bdb3b82b011d65d172a1901a6a0bf1e05a7f808aa73abd177cc74ad5194f217",
+  "source_fingerprint": "ac133e807e52e430fe0e2a4a0c4ed51b83d94896a9ebb1cf574a5b0c27648684",
   "vector_feasibility": [
     {
       "K": 8.0,

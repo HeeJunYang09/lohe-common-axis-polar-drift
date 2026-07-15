@@ -256,6 +256,14 @@ PHASE_A_MAIN_FILES = [
     "figures/fig6_d5_block_selection.png",
 ]
 
+PHASE_A_PUBLIC_FILES = [
+    "data/cache/fig06_d5_block_selection.npz",
+    "data/processed/metadata_exp06_d5_block_selection.json",
+    "data/processed/summary_exp06_d5_block_selection.csv",
+    "data/processed/d5_block_selection_summary.txt",
+    "figures/fig6_d5_block_selection.pdf",
+]
+
 FAILURE_COLUMNS = [
     "phase",
     "K",
@@ -462,6 +470,20 @@ APPENDIX_D5_REQUIRED_FILES = [
     "figures/appendix_figA2_d5_controls_robustness.pdf",
     "figures/appendix_figA2_d5_controls_robustness.png",
     "figures/appendix_figA2_d5_controls_robustness.eps",
+]
+
+APPENDIX_D5_PUBLIC_FILES = [
+    "data/cache/appendix_d5_diagnostics.npz",
+    "data/processed/appendix_d5_ansatz_scaling.csv",
+    "data/processed/appendix_d5_vector_law.csv",
+    "data/processed/appendix_d5_controls.csv",
+    "data/processed/appendix_d5_sensitivity.csv",
+    "data/processed/appendix_tableA1_d5_diagnostics.csv",
+    "paper/appendix_tableA1_d5_diagnostics.tex",
+    "data/processed/appendix_d5_config_registry.json",
+    "data/processed/metadata_appendix_d5.json",
+    "figures/appendix_figA1_d5_ansatz_validation.pdf",
+    "figures/appendix_figA2_d5_controls_robustness.pdf",
 ]
 
 APPENDIX_D5_CSV_SCHEMAS = {
@@ -695,6 +717,7 @@ def validate_phase_a_completion(
     expected_config: Mapping[str, Any] | None = None,
     expected_config_hash: str | None = None,
     expected_source_fingerprint: str | None = None,
+    require_local_records: bool = True,
 ) -> Dict[str, Any]:
     """Content-aware validation for the Phase A Figure 6 publication artifacts."""
     errors: List[str] = []
@@ -714,7 +737,8 @@ def validate_phase_a_completion(
         except Exception as exc:
             errors.append(f"could not compute source fingerprint: {exc}")
 
-    for rel in PHASE_A_MAIN_FILES:
+    required_files = PHASE_A_MAIN_FILES if require_local_records else PHASE_A_PUBLIC_FILES
+    for rel in required_files:
         checked.append(rel)
         if not _file_exists_nonempty(project_root, rel):
             errors.append(f"missing or empty {rel}")
@@ -815,42 +839,45 @@ def validate_phase_a_completion(
         except Exception as exc:
             errors.append(f"metadata validation failed: {exc}")
 
-    failure_errors, failure_warnings = _validate_failure_report(project_root / "data/processed/failures_exp06_d5_block_selection.json")
-    errors.extend(failure_errors)
-    warnings.extend(failure_warnings)
+    if require_local_records:
+        failure_errors, failure_warnings = _validate_failure_report(
+            project_root / "data/processed/failures_exp06_d5_block_selection.json"
+        )
+        errors.extend(failure_errors)
+        warnings.extend(failure_warnings)
 
-    receipt_errors, receipt_warnings = validate_receipt(
-        project_root / "data/processed/run_receipt_phase_a_recompute.json",
-        phase="phase_a_recompute",
-        project_root=project_root,
-        expected_config_hash=config_hash_found if expected_config_hash is None else expected_config_hash,
-        expected_source_fingerprint=expected_source_fingerprint,
-        expected_precision_mode="x64",
-        expected_jax_x64=True,
-        required_argv_tokens=("--recompute", "--x64"),
-        required_artifacts=("data/cache/fig06_d5_block_selection.npz",),
-    )
-    errors.extend(receipt_errors)
-    warnings.extend(receipt_warnings)
-    cache_receipt_errors, cache_receipt_warnings = validate_receipt(
-        project_root / "data/processed/run_receipt_phase_a_cache_render.json",
-        phase="phase_a_cache_render",
-        project_root=project_root,
-        expected_config_hash=config_hash_found if expected_config_hash is None else expected_config_hash,
-        expected_source_fingerprint=expected_source_fingerprint,
-        expected_precision_mode="x64",
-        expected_jax_x64=True,
-        required_artifacts=(
-            "data/processed/metadata_exp06_d5_block_selection.json",
-            "data/processed/summary_exp06_d5_block_selection.csv",
-            "data/processed/failures_exp06_d5_block_selection.json",
-            "figures/fig6_d5_block_selection.pdf",
-            "figures/fig6_d5_block_selection.png",
-            "figures/fig6_d5_block_selection.eps",
-        ),
-    )
-    errors.extend(cache_receipt_errors)
-    warnings.extend(cache_receipt_warnings)
+        receipt_errors, receipt_warnings = validate_receipt(
+            project_root / "data/processed/run_receipt_phase_a_recompute.json",
+            phase="phase_a_recompute",
+            project_root=project_root,
+            expected_config_hash=config_hash_found if expected_config_hash is None else expected_config_hash,
+            expected_source_fingerprint=expected_source_fingerprint,
+            expected_precision_mode="x64",
+            expected_jax_x64=True,
+            required_argv_tokens=("--recompute", "--x64"),
+            required_artifacts=("data/cache/fig06_d5_block_selection.npz",),
+        )
+        errors.extend(receipt_errors)
+        warnings.extend(receipt_warnings)
+        cache_receipt_errors, cache_receipt_warnings = validate_receipt(
+            project_root / "data/processed/run_receipt_phase_a_cache_render.json",
+            phase="phase_a_cache_render",
+            project_root=project_root,
+            expected_config_hash=config_hash_found if expected_config_hash is None else expected_config_hash,
+            expected_source_fingerprint=expected_source_fingerprint,
+            expected_precision_mode="x64",
+            expected_jax_x64=True,
+            required_artifacts=(
+                "data/processed/metadata_exp06_d5_block_selection.json",
+                "data/processed/summary_exp06_d5_block_selection.csv",
+                "data/processed/failures_exp06_d5_block_selection.json",
+                "figures/fig6_d5_block_selection.pdf",
+                "figures/fig6_d5_block_selection.png",
+                "figures/fig6_d5_block_selection.eps",
+            ),
+        )
+        errors.extend(cache_receipt_errors)
+        warnings.extend(cache_receipt_warnings)
 
     sci_statuses = {item["status"] for item in scientific_assessments}
     sci_failures = [item for item in scientific_assessments if item["status"] == "failed"]
@@ -877,12 +904,17 @@ def validate_phase_a_completion(
     }
 
 
-def validate_appendix_d5_completion(project_root: Path = PROJECT_ROOT) -> Dict[str, Any]:
+def validate_appendix_d5_completion(
+    project_root: Path = PROJECT_ROOT,
+    *,
+    require_local_records: bool = True,
+) -> Dict[str, Any]:
     """Content-aware Appendix diagnostics completion validation."""
     errors: List[str] = []
     warnings: List[str] = []
     checked: List[str] = []
-    for rel in APPENDIX_D5_REQUIRED_FILES:
+    required_files = APPENDIX_D5_REQUIRED_FILES if require_local_records else APPENDIX_D5_PUBLIC_FILES
+    for rel in required_files:
         checked.append(rel)
         path = project_root / rel
         if not path.exists() or path.stat().st_size == 0:
@@ -1054,54 +1086,55 @@ def validate_appendix_d5_completion(project_root: Path = PROJECT_ROOT) -> Dict[s
                         errors.append(f"nonfinite {key} in residual scaling")
                 except Exception:
                     errors.append(f"invalid {key} in residual scaling")
-    validation_path = project_root / "data/processed/validation_report_appendix_d5.json"
-    if validation_path.exists():
+    if require_local_records:
+        validation_path = project_root / "data/processed/validation_report_appendix_d5.json"
+        if validation_path.exists():
+            try:
+                validation = json.loads(validation_path.read_text(encoding="utf-8"))
+                if validation.get("status") != "passed":
+                    errors.append("Appendix validation report status is not passed")
+            except Exception as exc:
+                errors.append(f"Appendix validation report could not be read: {exc}")
+        migration_path = project_root / "data/processed/appendix_migration_equality_report.json"
+        if migration_path.exists():
+            try:
+                migration = json.loads(migration_path.read_text(encoding="utf-8"))
+                if migration.get("status") != "passed":
+                    errors.append("Appendix migration equality report status is not passed")
+            except Exception as exc:
+                errors.append(f"Appendix migration equality report could not be read: {exc}")
+        manifest = project_root / "data/processed/release_manifest_d5.txt"
+        if manifest.exists():
+            text = manifest.read_text(encoding="utf-8")
+            if "Appendix diagnostics status:" not in text:
+                errors.append("release manifest has no Appendix diagnostics run record")
+        else:
+            errors.append("release manifest missing")
+        failures_path = project_root / "data/processed/failures_exp06_d5_block_selection.json"
+        failure_errors, failure_warnings = _validate_failure_report(failures_path)
+        errors.extend(failure_errors)
+        warnings.extend(failure_warnings)
         try:
-            validation = json.loads(validation_path.read_text(encoding="utf-8"))
-            if validation.get("status") != "passed":
-                errors.append("Appendix validation report status is not passed")
+            source_fingerprint = compute_source_fingerprint(project_root)
         except Exception as exc:
-            errors.append(f"Appendix validation report could not be read: {exc}")
-    migration_path = project_root / "data/processed/appendix_migration_equality_report.json"
-    if migration_path.exists():
-        try:
-            migration = json.loads(migration_path.read_text(encoding="utf-8"))
-            if migration.get("status") != "passed":
-                errors.append("Appendix migration equality report status is not passed")
-        except Exception as exc:
-            errors.append(f"Appendix migration equality report could not be read: {exc}")
-    manifest = project_root / "data/processed/release_manifest_d5.txt"
-    if manifest.exists():
-        text = manifest.read_text(encoding="utf-8")
-        if "Appendix diagnostics status:" not in text:
-            errors.append("release manifest has no Appendix diagnostics run record")
-    else:
-        errors.append("release manifest missing")
-    failures_path = project_root / "data/processed/failures_exp06_d5_block_selection.json"
-    failure_errors, failure_warnings = _validate_failure_report(failures_path)
-    errors.extend(failure_errors)
-    warnings.extend(failure_warnings)
-    try:
-        source_fingerprint = compute_source_fingerprint(project_root)
-    except Exception as exc:
-        source_fingerprint = None
-        errors.append(f"could not compute source fingerprint: {exc}")
-    receipt_errors, receipt_warnings = validate_receipt(
-        project_root / "data/processed/run_receipt_appendix_d5.json",
-        phase="appendix_d5",
-        project_root=project_root,
-        expected_source_fingerprint=source_fingerprint,
-        expected_precision_mode="x64",
-        expected_jax_x64=True,
-        expected_phase_a_source_config_hash=phase_a_hash,
-        expected_appendix_package_config_hash=appendix_d5_package_hash,
-        required_argv_tokens=("--run", "all", "--x64"),
-        required_artifacts=(
-            *APPENDIX_D5_REQUIRED_FILES,
-        ),
-    )
-    errors.extend(receipt_errors)
-    warnings.extend(receipt_warnings)
+            source_fingerprint = None
+            errors.append(f"could not compute source fingerprint: {exc}")
+        receipt_errors, receipt_warnings = validate_receipt(
+            project_root / "data/processed/run_receipt_appendix_d5.json",
+            phase="appendix_d5",
+            project_root=project_root,
+            expected_source_fingerprint=source_fingerprint,
+            expected_precision_mode="x64",
+            expected_jax_x64=True,
+            expected_phase_a_source_config_hash=phase_a_hash,
+            expected_appendix_package_config_hash=appendix_d5_package_hash,
+            required_argv_tokens=("--run", "all", "--x64"),
+            required_artifacts=(
+                *APPENDIX_D5_REQUIRED_FILES,
+            ),
+        )
+        errors.extend(receipt_errors)
+        warnings.extend(receipt_warnings)
     return {
         "status": "failed" if errors else "completed with warnings" if warnings else "passed",
         "errors": errors,
@@ -1152,16 +1185,31 @@ def read_recorded_regression_status(project_root: Path = PROJECT_ROOT) -> str:
 
 def appendix_d5_artifacts_exist() -> bool:
     """Backward-compatible wrapper for content-aware Appendix diagnostics validation."""
-    return validate_appendix_d5_completion()["status"] in {"passed", "completed with warnings"}
+    return validate_appendix_d5_completion(require_local_records=False)["status"] in {
+        "passed",
+        "completed with warnings",
+    }
 
 
 def publication_completion_status(project_root: Path = PROJECT_ROOT) -> str:
-    phase_a = validate_phase_a_completion(project_root)
-    appendix_d5 = validate_appendix_d5_completion(project_root)
+    public_phase_a = validate_phase_a_completion(project_root, require_local_records=False)
+    public_appendix = validate_appendix_d5_completion(project_root, require_local_records=False)
+    if (
+        public_phase_a["status"] not in {"passed", "completed with warnings"}
+        or public_appendix["status"] not in {"passed", "completed with warnings"}
+    ):
+        return "Public Figure 6 or Appendix artifacts failed validation"
+
+    full_phase_a = validate_phase_a_completion(project_root, require_local_records=True)
+    full_appendix = validate_appendix_d5_completion(project_root, require_local_records=True)
     regression = read_recorded_regression_status(project_root)
-    if phase_a["status"] in {"passed", "completed with warnings"} and appendix_d5["status"] in {"passed", "completed with warnings"} and regression == "passed":
+    if (
+        full_phase_a["status"] in {"passed", "completed with warnings"}
+        and full_appendix["status"] in {"passed", "completed with warnings"}
+        and regression == "passed"
+    ):
         return "Full publication package completed"
-    return "Publication package incomplete"
+    return "Core public Figure 6 and Appendix artifacts completed; local validation records are optional"
 
 
 def aggregate_status(statuses: Sequence[str]) -> str:
@@ -1859,10 +1907,17 @@ def write_release_manifest(path: Path, conf_hash: str) -> None:
         "figures/appendix_figA2_d5_controls_robustness.png",
         "figures/appendix_figA2_d5_controls_robustness.eps",
     ]
+    public_phase_a_validation = validate_phase_a_completion(
+        expected_config_hash=conf_hash,
+        require_local_records=False,
+    )
+    public_appendix_d5_validation = validate_appendix_d5_completion(require_local_records=False)
     phase_a_validation = validate_phase_a_completion(expected_config_hash=conf_hash)
     appendix_d5_validation = validate_appendix_d5_completion()
     appendix_d5_status = appendix_d5_validation["status"]
     phase_a_status = phase_a_validation["status"]
+    public_phase_a_status = public_phase_a_validation["status"]
+    public_appendix_d5_status = public_appendix_d5_validation["status"]
     regression_status = read_recorded_regression_status()
     source_fingerprint = compute_source_fingerprint(PROJECT_ROOT)
     lines = [
@@ -1897,8 +1952,10 @@ def write_release_manifest(path: Path, conf_hash: str) -> None:
         "- python scripts/fig06_d5_block_selection.py",
         "- python scripts/appendix_d5_diagnostics.py --run all --x64",
         "",
-        f"Phase A status: {phase_a_status}",
-        f"Appendix diagnostics status: {appendix_d5_status}",
+        f"Public Figure 6 artifact status: {public_phase_a_status}",
+        f"Public Appendix artifact status: {public_appendix_d5_status}",
+        f"Full local Phase A status: {phase_a_status}",
+        f"Full local Appendix diagnostics status: {appendix_d5_status}",
         f"Figures 1-4 regression status: {regression_status}",
         f"Phase A recompute receipt path: data/processed/run_receipt_phase_a_recompute.json",
         f"Phase A cache-render receipt path: data/processed/run_receipt_phase_a_cache_render.json",

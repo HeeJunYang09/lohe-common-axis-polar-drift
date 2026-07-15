@@ -11,8 +11,13 @@
   "c_init": 0.3,
   "cache_file": "data/cache/fig01_fast_locking.npz",
   "figure": "Figure 1",
+  "jax_x64": true,
   "phi0": 0.85,
+  "precision_mode": "x64",
   "rtol": 1e-09,
+  "schema_version": "fig01_fast_locking_x64_v2",
   "sigma_omega": 0.15,
-  "theta0": 0.3
+  "state_dtype": "float64",
+  "theta0": 0.3,
+  "time_dtype": "float64"
 }

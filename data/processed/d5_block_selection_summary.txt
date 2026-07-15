@@ -4,7 +4,9 @@ Five-dimensional block-selection summary
 schema_version: 2.0
 perturbation_schema_version: d5_generic_trig_v1
 config_hash: 4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30
-source_fingerprint: 7bdb3b82b011d65d172a1901a6a0bf1e05a7f808aa73abd177cc74ad5194f217
+source_fingerprint: ac133e807e52e430fe0e2a4a0c4ed51b83d94896a9ebb1cf574a5b0c27648684
+git_commit: unavailable
+git_dirty: None
 
 Phase A status by K
 -------------------
@@ -38,4 +40,4 @@ E_phi_at_Kt10: slope=1.99374634575, intercept=-2.61374834234, R_squared=0.999999
 
 Failure records: 0
 
-Completion status: Full publication package completed
+Completion status: Core public Figure 6 and Appendix artifacts completed; local validation records are optional

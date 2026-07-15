@@ -1,0 +1,115 @@
+{
+  "C_tol": 5.0,
+  "D_over_Lambda_max": 0.9998299516172839,
+  "D_over_Lambda_mean": 0.9990803881322929,
+  "D_over_Lambda_min": 0.9970229996429605,
+  "N": 32,
+  "all_fast_thresholds_reached": true,
+  "atol": 1e-11,
+  "c_init": 0.3,
+  "cache_file": "data/cache/fig03_slow_polar_drift_gaussian_3x3_seeds0-4.npz",
+  "figure": "Figure 3",
+  "frequency_mode": "gaussian",
+  "jax_x64": true,
+  "panel_a_pairs": [
+    [
+      8.0,
+      0.18
+    ],
+    [
+      10.0,
+      0.2
+    ],
+    [
+      12.0,
+      0.22
+    ]
+  ],
+  "panel_b_K_values": [
+    8.0,
+    10.0,
+    12.0
+  ],
+  "panel_b_sigma_values": [
+    0.16,
+    0.2,
+    0.24
+  ],
+  "phi0": 0.85,
+  "precision_mode": "x64",
+  "relative_drift_error_max": 0.0029770003570395165,
+  "relative_drift_error_mean": 0.0009196118677072299,
+  "rho_max": 0.08914448332849356,
+  "rho_min": 0.029474698086411188,
+  "rtol": 1e-09,
+  "schema_version": "fig03_slow_polar_drift_x64_v2",
+  "seed_metrics": [
+    {
+      "D_over_Lambda_max_seed": 0.9997518089736729,
+      "D_over_Lambda_mean_seed": 0.9991951160352899,
+      "D_over_Lambda_min_seed": 0.9981226318168148,
+      "all_fast_thresholds_reached_seed": true,
+      "relative_drift_error_max_seed": 0.0018773681831851796,
+      "relative_drift_error_mean_seed": 0.0008048839647101853,
+      "rho_max_seed": 0.08162885849350578,
+      "rho_min_seed": 0.03627949266378035,
+      "seed": 0
+    },
+    {
+      "D_over_Lambda_max_seed": 0.9996190847773345,
+      "D_over_Lambda_mean_seed": 0.998764842219984,
+      "D_over_Lambda_min_seed": 0.9971198028702648,
+      "all_fast_thresholds_reached_seed": true,
+      "relative_drift_error_max_seed": 0.002880197129735196,
+      "relative_drift_error_mean_seed": 0.0012351577800160508,
+      "rho_max_seed": 0.08859327300095592,
+      "rho_min_seed": 0.039374788000424855,
+      "seed": 1
+    },
+    {
+      "D_over_Lambda_max_seed": 0.9997751169882719,
+      "D_over_Lambda_mean_seed": 0.9992704506304992,
+      "D_over_Lambda_min_seed": 0.9982979337957911,
+      "all_fast_thresholds_reached_seed": true,
+      "relative_drift_error_max_seed": 0.0017020662042088741,
+      "relative_drift_error_mean_seed": 0.0007295493695007717,
+      "rho_max_seed": 0.07311008443806492,
+      "rho_min_seed": 0.03249337086136219,
+      "seed": 2
+    },
+    {
+      "D_over_Lambda_max_seed": 0.9996062068913264,
+      "D_over_Lambda_mean_seed": 0.9987232895273661,
+      "D_over_Lambda_min_seed": 0.9970229996429605,
+      "all_fast_thresholds_reached_seed": true,
+      "relative_drift_error_max_seed": 0.0029770003570395165,
+      "relative_drift_error_mean_seed": 0.0012767104726339646,
+      "rho_max_seed": 0.08914448332849356,
+      "rho_min_seed": 0.03961977036821936,
+      "seed": 3
+    },
+    {
+      "D_over_Lambda_max_seed": 0.9998299516172839,
+      "D_over_Lambda_mean_seed": 0.9994482422483247,
+      "D_over_Lambda_min_seed": 0.9987123862221214,
+      "all_fast_thresholds_reached_seed": true,
+      "relative_drift_error_max_seed": 0.0012876137778785601,
+      "relative_drift_error_mean_seed": 0.0005517577516751773,
+      "rho_max_seed": 0.06631807069442516,
+      "rho_min_seed": 0.029474698086411188,
+      "seed": 4
+    }
+  ],
+  "seed_metrics_file": "data/processed/summary_exp03_slow_polar_drift_gaussian_seed_metrics_3x3_seeds0-4.csv",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "state_dtype": "float64",
+  "summary_file": "data/processed/summary_exp03_slow_polar_drift_gaussian_3x3_seeds0-4.csv",
+  "theta0": 0.3,
+  "time_dtype": "float64"
+}

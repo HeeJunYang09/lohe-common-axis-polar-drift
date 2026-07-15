@@ -1,13 +1,14 @@
 {
-  "drift_D_over_Lambda_max": 0.9997923058955288,
-  "drift_D_over_Lambda_mean": 0.9990756917803125,
-  "drift_D_over_Lambda_min": 0.9970203120052319,
+  "drift_D_over_Lambda_max": 0.9998299516172839,
+  "drift_D_over_Lambda_mean": 0.9990803881322929,
+  "drift_D_over_Lambda_min": 0.9970229996429605,
   "drift_K_values": [
     8.0,
     10.0,
     12.0
   ],
   "drift_cache": "data/cache/fig03_slow_polar_drift_gaussian_3x3_seeds0-4.npz",
+  "drift_cache_schema_version": "fig03_slow_polar_drift_x64_v2",
   "drift_sigma_values": [
     0.16,
     0.2,
@@ -23,9 +24,10 @@
     12.0
   ],
   "hitting_cache": "data/cache/fig04_hitting_time_gaussian_5x5_seeds0-4.npz",
-  "hitting_relative_error_max": 0.008920264694495531,
-  "hitting_relative_error_mean": 0.0016739973796712946,
-  "hitting_relative_error_min": 7.41905592558237e-05,
+  "hitting_cache_schema_version": "fig04_hitting_time_x64_v2",
+  "hitting_relative_error_max": 0.008912769185325955,
+  "hitting_relative_error_mean": 0.0016685751631242433,
+  "hitting_relative_error_min": 6.618838422911083e-05,
   "hitting_sigma_values": [
     0.2,
     0.24,
@@ -33,6 +35,9 @@
     0.32,
     0.36
   ],
+  "required_atol": 1e-11,
+  "required_precision_mode": "x64",
+  "required_rtol": 1e-09,
   "seeds": [
     0,
     1,

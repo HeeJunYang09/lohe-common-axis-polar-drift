@@ -4,11 +4,17 @@
 #%%
 # Imports and project paths
 import csv
+import os
 import sys
 from pathlib import Path
 
+from jax import config as jax_config
+
+jax_config.update("jax_enable_x64", True)
+
 import matplotlib.pyplot as plt
 import numpy as np
+import jax
 
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent
@@ -51,7 +57,9 @@ plt.rcParams.update(
 
 #%%
 # Parameters: c_init is named perturb_scale in the numerical utilities.
-RECOMPUTE = False
+RECOMPUTE = os.environ.get("FIG01_RECOMPUTE", "0") == "1"
+SCHEMA_VERSION = "fig01_fast_locking_x64_v2"
+PRECISION_MODE = "x64"
 N = 128
 K_VALUES = np.array([10.0, 15.0, 22.5, 30.0])
 SIGMA_OMEGA = 0.15
@@ -72,12 +80,52 @@ for directory in (FIGURE_DIR, CACHE_DIR, SUMMARY_DIR):
     directory.mkdir(parents=True, exist_ok=True)
 CACHE_FILE = CACHE_DIR / "fig01_fast_locking.npz"
 
+if not bool(jax.config.jax_enable_x64):
+    raise RuntimeError("Figure 1 requires JAX x64 precision.")
+
+
+def _cache_string(value):
+    return str(np.asarray(value).item())
+
+
+def _cache_float(value):
+    return float(np.asarray(value).item())
+
+
+def cache_matches_current_schema(cache):
+    required = {
+        "schema_version", "precision_mode", "jax_x64", "rtol", "atol",
+        "time_dtype", "state_dtype", "ts", "K_values", "E_lock",
+        "rho", "thresholds", "tf_num", "sphere_norm_error",
+    }
+    if not required.issubset(set(cache.files)):
+        return False
+    return (
+        _cache_string(cache["schema_version"]) == SCHEMA_VERSION
+        and _cache_string(cache["precision_mode"]) == PRECISION_MODE
+        and bool(np.asarray(cache["jax_x64"]).item())
+        and np.isclose(_cache_float(cache["rtol"]), RTOL, rtol=0.0, atol=0.0)
+        and np.isclose(_cache_float(cache["atol"]), ATOL, rtol=0.0, atol=0.0)
+        and _cache_string(cache["time_dtype"]) == "float64"
+        and _cache_string(cache["state_dtype"]) == "float64"
+    )
+
 #%%
 # Load or generate data. Set RECOMPUTE=True and rerun this cell to regenerate.
 if CACHE_FILE.exists() and not RECOMPUTE:
-    data = dict(np.load(CACHE_FILE))
-    print("Loaded:", CACHE_FILE)
+    loaded = np.load(CACHE_FILE, allow_pickle=False)
+    if cache_matches_current_schema(loaded):
+        data = dict(loaded)
+        loaded.close()
+        print("Loaded:", CACHE_FILE)
+    else:
+        loaded.close()
+        print("Ignoring stale Figure 1 cache:", CACHE_FILE)
+        data = None
 else:
+    data = None
+
+if data is None:
     records = []
     for K in K_VALUES:
         omega = deterministic_frequencies(N=N, omega_bar=OMEGA_BAR, sigma_omega=SIGMA_OMEGA)
@@ -105,9 +153,18 @@ else:
                 "Lambda_K": compute_lambda_K(vartheta, K),
                 "locked_residual": locked_residual,
                 "sphere_norm_error": result.stats["sphere_norm_error"],
+                "time_dtype": str(result.ts.dtype),
+                "state_dtype": str(result.xs.dtype),
             }
         )
     data = {
+        "schema_version": np.array(SCHEMA_VERSION),
+        "precision_mode": np.array(PRECISION_MODE),
+        "jax_x64": np.array(bool(jax.config.jax_enable_x64)),
+        "rtol": np.array(RTOL),
+        "atol": np.array(ATOL),
+        "time_dtype": np.array(records[0]["time_dtype"]),
+        "state_dtype": np.array(records[0]["state_dtype"]),
         "ts": records[0]["ts"],
         "K_values": K_VALUES,
         "E_theta": np.stack([r["E_theta"] for r in records]),
@@ -176,6 +233,9 @@ save_metadata(SUMMARY_DIR / "metadata_exp01.json", {
     "figure": "Figure 1", "cache_file": CACHE_FILE.relative_to(PROJECT_ROOT), "N": N, "K_values": K_VALUES,
     "sigma_omega": SIGMA_OMEGA, "theta0": THETA0, "phi0": PHI0,
     "c_init": C_INIT, "C_tol": C_TOL, "rtol": RTOL, "atol": ATOL,
+    "schema_version": SCHEMA_VERSION, "precision_mode": PRECISION_MODE,
+    "jax_x64": bool(jax.config.jax_enable_x64),
+    "time_dtype": _cache_string(data["time_dtype"]), "state_dtype": _cache_string(data["state_dtype"]),
 })
 
 #%%
