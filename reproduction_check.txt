@@ -1,43 +1,51 @@
 Reproduction check
 ==================
 
-Date: 2026-06-11
+Date: Wed Jul 15 15:27:43 KST 2026
+Git commit: NOT AVAILABLE, git executable was not found in this environment
 Working directory: repository root
 Conda environment: py3_9
+Working tree status before check: NOT AVAILABLE, git executable was not found in this environment
 
 Detected versions
 -----------------
 Python: 3.9.21
 JAX: 0.4.23
-JAXlib: 0.4.23 (installed CUDA build: 0.4.23+cuda11.cudnn86)
+JAXlib: 0.4.23
 Diffrax: 0.5.0
 NumPy: 1.26.4
 SciPy: 1.12.0
 Matplotlib: 3.9.2
 
-Commands tested from the repository root
-----------------------------------------
-python scripts/fig01_fast_locking.py
-python scripts/fig02_phase_gap_prediction.py
-python scripts/fig03_slow_polar_drift.py
-python scripts/fig04_hitting_time.py
-python scripts/fig05_gaussian_robustness.py
-
-For this check, "python" was the interpreter from the py3_9 Conda
-environment. MPLBACKEND=Agg and writable temporary MPLCONFIGDIR directories
-were used for headless execution.
+Commands tested
+---------------
+git status --short
+git rev-parse HEAD
+conda run --no-capture-output -n py3_9 python --version
+conda run --no-capture-output -n py3_9 python -c "import sys, jax, jaxlib, diffrax, numpy, scipy, matplotlib; ..."
+conda run --no-capture-output -n py3_9 python scripts/fig01_fast_locking.py
+conda run --no-capture-output -n py3_9 python scripts/fig02_phase_gap_prediction.py
+conda run --no-capture-output -n py3_9 python scripts/fig03_slow_polar_drift.py
+conda run --no-capture-output -n py3_9 python scripts/fig04_hitting_time.py
+conda run --no-capture-output -n py3_9 python scripts/fig05_gaussian_robustness.py
+conda run --no-capture-output -n py3_9 python scripts/fig06_d5_block_selection.py
+conda run --no-capture-output -n py3_9 python scripts/appendix_d5_diagnostics.py --run all --x64
+conda run --no-capture-output -n py3_9 python -m pytest -q tests/test_high_dimensional_utils.py
 
 Results
 -------
-PASS: scripts/fig01_fast_locking.py
-PASS: scripts/fig02_phase_gap_prediction.py
-PASS: scripts/fig03_slow_polar_drift.py
-PASS: scripts/fig04_hitting_time.py
-PASS: scripts/fig05_gaussian_robustness.py
-
-All scripts loaded the included cache files. No numerical simulation was
-recomputed during this check. All five manuscript figure PDFs were generated
-successfully from the included processed data/cache files.
+NOT RUN: git status, git executable was not found
+NOT RUN: git rev-parse HEAD, git executable was not found
+PASS: environment version query
+PASS: Figure 1 script, cache loaded and fig1_fast_locking outputs written
+PASS: Figure 2 script, cache loaded and fig2_phase_gap_prediction outputs written
+PASS: Figure 3 script, cache loaded and deterministic slow-polar-drift outputs written
+PASS: Figure 4 script, cache loaded and deterministic hitting-time outputs written
+PASS: Figure 5 script, Gaussian cache files loaded and robustness outputs written
+PASS: Figure 6 script, exit code 0. The script printed "Completion status: Publication package incomplete" because local receipt and validation artifacts are not retained in the cleaned public folder.
+PASS: Appendix Figure A.1 and A.2 script, exit code 0. The command completed with 6 control rows, 23 sensitivity rows, and 4 table rows.
+PARTIAL: high-dimensional utility tests during the full command sequence, 22 passed and 48 skipped
+PARTIAL: high-dimensional utility tests after restoring non-target artifacts to the cleaned public-folder state, 20 passed and 50 skipped
 
 Generated final PDFs
 --------------------
@@ -46,26 +54,16 @@ figures/fig2_phase_gap_prediction.pdf
 figures/fig3_slow_polar_drift_deterministic.pdf
 figures/fig4_hitting_time_deterministic.pdf
 figures/fig5_gaussian_robustness.pdf
+figures/fig6_d5_block_selection.pdf
+figures/appendix_figA1_d5_ansatz_validation.pdf
+figures/appendix_figA2_d5_controls_robustness.pdf
 
-Rendering check
----------------
-Local author check: generated PNG files matched the final manuscript figure
-references used by the authors.
-
-Manuscript consistency check
-----------------------------
-PASS: the manuscript figure values are consistent with the processed data in
-this repository after rounding.
-
-Path and cleanup check
-----------------------
-PASS: no local absolute paths were found in public repository files.
-PASS: no stale journal/style or draft-comment phrases were found in
-public-facing files.
+Working tree status after check
+-------------------------------
+NOT AVAILABLE, git executable was not found in this environment
 
 Notes
 -----
-The Matplotlib PostScript backend warns that transparency is rendered opaque
-when saving EPS for Figures 1 and 5. PDF and PNG generation succeeded.
-
-No GitHub push was attempted.
+- Only the style-test expectations, figure mapping, and this report were intentionally modified.
+- Figure script execution generated transient PNG, EPS, receipt, validation, and metadata-timestamp changes. Those non-target artifacts were restored or removed using the pre-check snapshot so that the final intentional changes are limited to the three files listed above.
+- The repository has no environment.yml file. The available requirements files are requirements.txt and requirements-lock.txt.

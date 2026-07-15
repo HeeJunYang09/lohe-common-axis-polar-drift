@@ -393,11 +393,11 @@ def test_appendix_A1_plot_applies_paper_style(monkeypatch, tmp_path) -> None:
     )
     appendix.plot_appendix_A1(residual_rows, vector_rows)
     try:
-        assert mpl.rcParams["font.size"] == 13
-        assert mpl.rcParams["axes.labelsize"] == 15
+        assert mpl.rcParams["font.size"] == 14
+        assert mpl.rcParams["axes.labelsize"] == 16
         assert mpl.rcParams["xtick.labelsize"] == 12
         assert mpl.rcParams["ytick.labelsize"] == 12
-        assert mpl.rcParams["legend.fontsize"] == 11
+        assert mpl.rcParams["legend.fontsize"] == 10
         assert mpl.rcParams["lines.linewidth"] == 2.0
         assert mpl.rcParams["axes.linewidth"] == 1.1
     finally:
