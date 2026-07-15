@@ -27,6 +27,7 @@ from common_utils import (
     solve_locked_profile,
 )
 from figure_style import apply_paper_style, format_axes, save_figure_all_formats
+from run_receipts import record_figure_regression
 
 apply_paper_style()
 plt.rcParams.update(
@@ -247,6 +248,7 @@ fig.canvas.draw()
 # Save and show
 saved_paths = save_figure_all_formats(fig, FIGURE_DIR, "fig2_phase_gap_prediction")
 print("Saved:", *saved_paths, sep="\n")
+record_figure_regression(PROJECT_ROOT, figure_script="fig02_phase_gap_prediction.py", generated_artifacts=saved_paths)
 plt.close(fig)
 
 # %%

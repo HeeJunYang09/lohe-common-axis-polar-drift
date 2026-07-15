@@ -31,6 +31,7 @@ from common_utils import (
     solve_locked_profile,
 )
 from figure_style import apply_paper_style, format_axes, save_figure_all_formats
+from run_receipts import record_figure_regression
 
 apply_paper_style()
 plt.rcParams.update(
@@ -392,6 +393,7 @@ def plot_figure3(plot_data):
     fig.subplots_adjust(left=LEFT, right=RIGHT, bottom=BOTTOM, top=TOP, wspace=WSPACE)
     saved_paths = save_figure_all_formats(fig, FIGURE_DIR, FIGURE_STEM)
     print("Saved:", *saved_paths, sep="\n")
+    record_figure_regression(PROJECT_ROOT, figure_script="fig03_slow_polar_drift.py", generated_artifacts=saved_paths)
     plt.close(fig)
 
 #%%

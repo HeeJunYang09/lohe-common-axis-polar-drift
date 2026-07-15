@@ -4,3 +4,4 @@ matplotlib
 jax
 jaxlib
 diffrax
+pytest

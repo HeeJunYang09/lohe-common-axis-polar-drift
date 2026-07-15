@@ -1,0 +1,41 @@
+Five-dimensional block-selection summary
+=========================================
+
+schema_version: 2.0
+perturbation_schema_version: d5_generic_trig_v1
+config_hash: 4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30
+source_fingerprint: 7bdb3b82b011d65d172a1901a6a0bf1e05a7f808aa73abd177cc74ad5194f217
+
+Phase A status by K
+-------------------
+K=8, rho=0.0529691, t_f=0, slope_rel_err=0.000922945, polar_rel_L2=0.000962933, warnings=0
+K=10, rho=0.0423753, t_f=0, slope_rel_err=0.000590563, polar_rel_L2=0.000617143, warnings=0
+K=12, rho=0.0353128, t_f=0, slope_rel_err=0.000410086, polar_rel_L2=0.00042893, warnings=0
+K=16, rho=0.0264846, t_f=0.00875, slope_rel_err=0.000230638, polar_rel_L2=0.000239431, warnings=0
+
+Assumption diagnostics
+----------------------
+K=8, median R_ans/rho^2=0.249521, p95 R_ans/rho^2=0.807993, min mean transverse norm=0.999593
+K=10, median R_ans/rho^2=0.249695, p95 R_ans/rho^2=0.736246, min mean transverse norm=0.999739
+K=12, median R_ans/rho^2=0.249816, p95 R_ans/rho^2=0.653469, min mean transverse norm=0.999819
+K=16, median R_ans/rho^2=0.249724, p95 R_ans/rho^2=0.470342, min mean transverse norm=0.999899
+
+Fast-layer threshold diagnostics
+--------------------------------
+C_tol=5 remains the primary pre-analysis threshold. C_tol=1 is exploratory.
+Under C_tol=5, t_f=0 for coupling values whose initial normalized residuals already satisfy the persistent criterion.
+K=8, Kt_f(Ctol=1,3,5,8)=(1.22, 0, 0, 0), R_ans(0)/rho=0.150024, R_ans(Kt=10)/rho^2=0.277402
+K=10, Kt_f(Ctol=1,3,5,8)=(1.4625, 0.1875, 0, 0), R_ans(0)/rho=0.15003, R_ans(Kt=10)/rho^2=0.277321
+K=12, Kt_f(Ctol=1,3,5,8)=(1.65, 0.375, 0, 0), R_ans(0)/rho=0.150033, R_ans(Kt=10)/rho^2=0.277271
+K=16, Kt_f(Ctol=1,3,5,8)=(1.96, 0.68, 0.14, 0), R_ans(0)/rho=0.150036, R_ans(Kt=10)/rho^2=0.277214
+
+Fast-layer scaling fits
+-----------------------
+initial_R_ans: slope=0.999887799251, intercept=-1.89728050068, R_squared=0.999999999413
+initial_E_phi: slope=1, intercept=-1.89738779869, R_squared=1
+R_ans_at_Kt10: slope=2.00096776424, intercept=-1.27948495134, R_squared=0.999999994923
+E_phi_at_Kt10: slope=1.99374634575, intercept=-2.61374834234, R_squared=0.99999956214
+
+Failure records: 0
+
+Completion status: Full publication package completed

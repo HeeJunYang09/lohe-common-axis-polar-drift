@@ -1,0 +1,482 @@
+{
+  "appendix_package_config_hash": "283a4a5dfca9862b1a7093c700561994ac040325ddf95b6980e5920265cc1b6d",
+  "configurations": {
+    "1e18be6ebf359b7f237a609dd294ae47432d43cd870e9ab6bbb9e74575f71bdc": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "maximum_relative_change",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "maximum_relative_change"
+      }
+    },
+    "23e10c30019018d7233b4a09b45a4c62b494eb3def2d6108b3b225688f5e9bf6": {
+      "canonical_config": {
+        "C_tol": 3.0,
+        "K": 16.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 3.0,
+        "K": 16.0
+      }
+    },
+    "24e9477d53a1d87b0734b0705a420a1e41bca21541f63212f752516c4bc688e5": {
+      "canonical_config": {
+        "K": 10.0,
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "sigma_std_target": [
+          0.21999999999999997,
+          0.21999999999999997
+        ]
+      },
+      "experiment_type": "equal_variance",
+      "row_identity": {
+        "K": 10.0
+      }
+    },
+    "2953510d8787a013e1f7c00b7e00335789bdff58da1927421b8b585460c6b0e9": {
+      "canonical_config": {
+        "C_tol": 8.0,
+        "K": 12.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 8.0,
+        "K": 12.0
+      }
+    },
+    "2ddfc5708d3a7f1649c19eea0bedd87f0d19757ddc56b649031680e50d9cebf8": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "maximum_absolute_change",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "maximum_absolute_change"
+      }
+    },
+    "3148f9a32ee6c43a912db3661df2e9898ecf51a00a0990b7071ec3a6b129bf5d": {
+      "canonical_config": {
+        "C_tol": 8.0,
+        "K": 10.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 8.0,
+        "K": 10.0
+      }
+    },
+    "373a4041eccef4bfb77eec525db22c646720bccf111d6d26e9445bc2fa1ee8d7": {
+      "canonical_config": {
+        "K": 10.0,
+        "frequency_mode": "gaussian_independent",
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "seed": 3
+      },
+      "experiment_type": "gaussian_robustness",
+      "row_identity": {
+        "K": 10.0,
+        "seed": 3
+      }
+    },
+    "413a95148860a234b9ce832b578e24807339f6be8e854652848d837ced7fc4a2": {
+      "canonical_config": {
+        "C_tol": 1.0,
+        "K": 16.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 1.0,
+        "K": 16.0
+      }
+    },
+    "50da58d8ee2d94ec2db5f044d49a94d1ba8fdf89990698ad3bc7419466d9a827": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "maximum_relative_change",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "maximum_relative_change"
+      }
+    },
+    "563fae58259046a604449ad85c529489d8f6668aada1d196e76ae622e2bf75ec": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "t_f_num",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "t_f_num"
+      }
+    },
+    "583d1d9c2a50081034a156ea30a74338c514e61cfdab2f8f8209724a6e810b73": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "maximum_absolute_change",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "maximum_absolute_change"
+      }
+    },
+    "58a614663c890cbf5d8b186916e4a20a3883f8f22386fac3afe9235d6bd5521f": {
+      "canonical_config": {
+        "C_tol": 5.0,
+        "K": 16.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 5.0,
+        "K": 16.0
+      }
+    },
+    "59f8a321e14ccf767200e5eedb593f94b2f29dd337c099acee8749e4ef930291": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "log_ratio_slope_fit",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "log_ratio_slope_fit"
+      }
+    },
+    "5e722acdd5dde3fb38204170c3797d5cb80f0e72694a497bae02952ae232fa22": {
+      "canonical_config": {
+        "C_tol": 5.0,
+        "K": 8.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 5.0,
+        "K": 8.0
+      }
+    },
+    "6772da4e4eec09afe0c082a50edf1a147a200ff36d9c7c9bba4dc5952e51d9bf": {
+      "canonical_config": {
+        "K": 10.0,
+        "frequency_mode": "gaussian_independent",
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "seed": 0
+      },
+      "experiment_type": "gaussian_robustness",
+      "row_identity": {
+        "K": 10.0,
+        "seed": 0
+      }
+    },
+    "68643a35d0a517aa70b599e18298ba0e72fa859b8f24b94c352bd18cc9fab81f": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "polar_logtan_relative_L2_error",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "polar_logtan_relative_L2_error"
+      }
+    },
+    "6e33f86b5f2356ffb1e0fd3914fd57586e31c4b19705edf3f33775dc2b47981c": {
+      "canonical_config": {
+        "C_tol": 1.0,
+        "K": 8.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 1.0,
+        "K": 8.0
+      }
+    },
+    "750ddb9e982d4926f40fac16379de57a45e234a7260a3709853294eeb4b9971b": {
+      "canonical_config": {
+        "C_tol": 5.0,
+        "K": 10.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 5.0,
+        "K": 10.0
+      }
+    },
+    "891ab2d73d24c02a1e1462813309d35c1ea0d70c11a366c9c8ba5c3abf1a307f": {
+      "canonical_config": {
+        "K": 10.0,
+        "frequency_mode": "gaussian_independent",
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "seed": 1
+      },
+      "experiment_type": "gaussian_robustness",
+      "row_identity": {
+        "K": 10.0,
+        "seed": 1
+      }
+    },
+    "8fbb42625b189675751377977bf814de66be614466d780dc8f0a8156d77cd9c3": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "sphere_norm_error",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "sphere_norm_error"
+      }
+    },
+    "92b2a5475c07784e2bbbd16fa6207aacdca1c9aa82963236957f4f359ee59c87": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "polar_logtan_relative_L2_error",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "polar_logtan_relative_L2_error"
+      }
+    },
+    "9a7b9f642691d2a69674ae3f018b1aa982234dc7dda9e0e2f4c5f87994650572": {
+      "canonical_config": {
+        "C_tol": 3.0,
+        "K": 12.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 3.0,
+        "K": 12.0
+      }
+    },
+    "aa0bb174c6283b73fc0828777b434a645961efa015aac9c314a7655f1f86bdee": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "max_R_ans_on_post_fast_interval",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "max_R_ans_on_post_fast_interval"
+      }
+    },
+    "ab44cb066af599bace6002e3ee5d2b3f61860af3128dab3864fe9f3df1832d93": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "sphere_norm_error",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "sphere_norm_error"
+      }
+    },
+    "b1fe379c30013785ba384deefbffb12347bd6faf0e485c525a724adfc5b23048": {
+      "canonical_config": {
+        "K": 10.0,
+        "frequency_mode": "gaussian_independent",
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "seed": 4
+      },
+      "experiment_type": "gaussian_robustness",
+      "row_identity": {
+        "K": 10.0,
+        "seed": 4
+      }
+    },
+    "b802e136908200e86cd966da3813e95f7c9d33c4656f5dc18087bc7653ed343e": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "t_f_num",
+        "role": "baseline"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "baseline",
+        "quantity": "t_f_num"
+      }
+    },
+    "b95f60b1a9b1f67eb0e83f7d55650902e40113fea97099575c0a34888e997c4e": {
+      "canonical_config": {
+        "C_tol": 8.0,
+        "K": 8.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 8.0,
+        "K": 8.0
+      }
+    },
+    "b9f4664414fed34ae52f77e69fbf4562abb726b78d748d23a6eb197c2c0d22d8": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "max_R_ans_on_post_fast_interval",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "max_R_ans_on_post_fast_interval"
+      }
+    },
+    "c3980f47a8eb6b65c27ca5387b0744ea11d41cf76c0b13448683200cbddede09": {
+      "canonical_config": {
+        "C_tol": 8.0,
+        "K": 16.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 8.0,
+        "K": 16.0
+      }
+    },
+    "c84c6f1c0af73a1e91c03ba0164a258ff399faa0107cd6dd33744fa5c595c8db": {
+      "canonical_config": {
+        "C_tol": 3.0,
+        "K": 8.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 3.0,
+        "K": 8.0
+      }
+    },
+    "c96cd814c8f65fea06e90ad9028061908a6bd31d568fd05ff993a657f344ae99": {
+      "canonical_config": {
+        "C_tol": 1.0,
+        "K": 12.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 1.0,
+        "K": 12.0
+      }
+    },
+    "d2221cff505e8bc438011590a4172d420e60af48c96b4ace9cbe28f5239ad818": {
+      "canonical_config": {
+        "C_tol": 5.0,
+        "K": 12.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 5.0,
+        "K": 12.0
+      }
+    },
+    "d575661a07bf65c955ee821f94cf537825a53cd393a979db3d216dafe51f9caf": {
+      "canonical_config": {
+        "C_tol": 3.0,
+        "K": 10.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 3.0,
+        "K": 10.0
+      }
+    },
+    "dea57aae8ea7a254e149488aa750f4203ccff22871f118f17febec1176e2253c": {
+      "canonical_config": {
+        "C_tol": 1.0,
+        "K": 10.0,
+        "phase_a_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "source": "phase_a_cache"
+      },
+      "experiment_type": "threshold_sensitivity",
+      "row_identity": {
+        "C_tol": 1.0,
+        "K": 10.0
+      }
+    },
+    "e9e198ff273db0409974a836a5c6454815dff26995d9c3f2527c8687dc45447d": {
+      "canonical_config": {
+        "K": 10.0,
+        "frequency_mode": "gaussian_independent",
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "seed": 2
+      },
+      "experiment_type": "gaussian_robustness",
+      "row_identity": {
+        "K": 10.0,
+        "seed": 2
+      }
+    },
+    "eb2ba11550bc691fa9ee785de262b41833c9ad0693737e966d9aa2175ef87be3": {
+      "canonical_config": {
+        "comparison_schema": "comparison_type_change_value_v1",
+        "quantity": "log_ratio_slope_fit",
+        "role": "refined"
+      },
+      "experiment_type": "tolerance_refinement",
+      "row_identity": {
+        "config_role": "refined",
+        "quantity": "log_ratio_slope_fit"
+      }
+    },
+    "eca8a7924f77d96953d6e1ceeb52206bf917c5cbc4a20680d065edaa5c4cc23b": {
+      "canonical_config": {
+        "K_set": [
+          8.0,
+          10.0,
+          12.0,
+          16.0
+        ],
+        "Kt_eval": 10.0,
+        "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+        "target_slope_bands": [
+          1.8,
+          2.2
+        ]
+      },
+      "experiment_type": "residual_scaling",
+      "row_identity": {
+        "quantity": "R_ans,E_phi"
+      }
+    }
+  },
+  "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+  "schema_version": "appendix_d5_config_registry_v1"
+}

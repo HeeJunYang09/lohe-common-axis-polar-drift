@@ -18,6 +18,7 @@ if str(SRC_DIR) not in sys.path:
 
 from common_utils import save_metadata
 from figure_style import apply_paper_style, format_axes, save_figure_all_formats
+from run_receipts import record_figure_regression
 
 apply_paper_style()
 plt.rcParams.update(
@@ -227,6 +228,7 @@ fig.subplots_adjust(left=LEFT, right=RIGHT, bottom=BOTTOM, top=TOP, wspace=WSPAC
 # Save and show
 saved_paths = save_figure_all_formats(fig, FIGURE_DIR, FIGURE_STEM)
 print("Saved:", *saved_paths, sep="\n")
+record_figure_regression(PROJECT_ROOT, figure_script="fig05_gaussian_robustness.py", generated_artifacts=saved_paths)
 plt.close(fig)
 
 # %%

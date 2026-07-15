@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
+.pytest_cache/
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
@@ -10,3 +11,11 @@ scratch/
 *.log
 figures/*.png
 figures/*.eps
+D5_*REPORT*.md
+reproduction_check.txt
+data/processed/run_receipt_*.json
+data/processed/release_manifest_d5.txt
+data/processed/regression_fig1_4_report.json
+data/processed/validation_report_*.json
+data/processed/appendix_migration_equality_report.json
+data/processed/failures_*.json

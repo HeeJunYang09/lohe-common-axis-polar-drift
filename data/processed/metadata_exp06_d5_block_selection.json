@@ -1,0 +1,189 @@
+{
+  "C_tol": 5.0,
+  "K_values": [
+    8.0,
+    10.0,
+    12.0,
+    16.0
+  ],
+  "N": 64,
+  "Q_block_error": 0.0,
+  "atol": 1e-11,
+  "bar_omega_empirical": [
+    0.5,
+    -0.25
+  ],
+  "bar_omega_target": [
+    0.5,
+    -0.25
+  ],
+  "c_init": 0.3,
+  "config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+  "configuration": {
+    "C_tol": 5.0,
+    "K_values": [
+      8.0,
+      10.0,
+      12.0,
+      16.0
+    ],
+    "N": 64,
+    "atol": 1e-11,
+    "bar_omega_target": [
+      0.5,
+      -0.25
+    ],
+    "c_init": 0.3,
+    "dimension": 5,
+    "dt0": 0.001,
+    "eps_pole": 1e-10,
+    "frequency_mode": "deterministic_independent",
+    "initial_block_weights": [
+      0.5,
+      0.5
+    ],
+    "jax_x64": true,
+    "max_steps": 500000,
+    "mean_transverse_invalid": 0.5,
+    "mean_transverse_warning": 0.9,
+    "metric_phi_max": 0.8,
+    "metric_phi_min": 0.35,
+    "persistence_Kt": 2.0,
+    "perturbation_schema_version": "d5_generic_trig_v1",
+    "phi0": 0.85,
+    "precision_mode": "x64",
+    "rtol": 1e-09,
+    "save_grid_fast_points": 801,
+    "save_grid_fast_start": 0.0,
+    "save_grid_fast_stop": 1.0,
+    "save_grid_remove_duplicate_t1": true,
+    "save_grid_slow_points": 2200,
+    "save_grid_slow_start": 1.0,
+    "save_grid_slow_stop_rule": "T_end=1+tau_max*K",
+    "schema_version": "2.0",
+    "seed": null,
+    "sigma_std_target": [
+      0.1,
+      0.3
+    ],
+    "success_thresholds": {
+      "block_weight_sum_error": {
+        "pass_lt": 1e-12,
+        "warning_lt": 1e-10
+      },
+      "drift_relative_L2_error": {
+        "pass_lt": 0.05,
+        "warning_lt": 0.1
+      },
+      "log_ratio_slope_relative_error": {
+        "pass_lt": 0.05,
+        "warning_lt": 0.1
+      },
+      "max_phi_error": {
+        "pass_lt": 0.03,
+        "warning_lt": 0.06
+      },
+      "median_E_phi_over_rho2": {
+        "pass_lt": 10.0,
+        "warning_lt": 20.0
+      },
+      "median_R_ans_over_rho2": {
+        "pass_lt": 10.0,
+        "warning_lt": 20.0
+      },
+      "metric_point_count": {
+        "pass_ge": 100
+      },
+      "min_mean_transverse_norm": {
+        "invalid_lt": 0.5,
+        "pass_ge": 0.95
+      },
+      "p95_E_phi_over_rho2": {
+        "pass_lt": 20.0,
+        "warning_lt": 40.0
+      },
+      "p95_R_ans_over_rho2": {
+        "pass_lt": 20.0,
+        "warning_lt": 40.0
+      },
+      "p_relative_L2_error": {
+        "pass_lt": 0.05,
+        "warning_lt": 0.1
+      },
+      "polar_logtan_relative_L2_error": {
+        "pass_lt": 0.02,
+        "warning_lt": 0.05
+      },
+      "sphere_norm_error": {
+        "pass_lt": 1e-08,
+        "warning_lt": 1e-06
+      }
+    },
+    "tau_max": 18.0,
+    "theta_block_values": [
+      0.3,
+      1.05
+    ]
+  },
+  "created_utc": "2026-07-13T04:43:38.610169+00:00",
+  "diffrax_version": "0.5.0",
+  "dimension": 5,
+  "dt0": 0.001,
+  "eps_pole": 1e-10,
+  "experiment": "d5_block_selection",
+  "frequency_mode": "deterministic_independent",
+  "initial_block_weights": [
+    0.5,
+    0.5
+  ],
+  "jax_version": "0.4.23",
+  "jax_x64": true,
+  "jaxlib_version": "0.4.23",
+  "manuscript_equations": [
+    19,
+    21,
+    22,
+    25,
+    26,
+    27,
+    28
+  ],
+  "matplotlib_version": "3.9.2",
+  "max_axis_residual": 0.0,
+  "max_commutator_residual": 0.0,
+  "max_skew_residual": 0.0,
+  "max_steps": 500000,
+  "mean_transverse_invalid": 0.5,
+  "mean_transverse_warning": 0.9,
+  "metric_phi_max": 0.8,
+  "metric_phi_min": 0.35,
+  "numpy_version": "1.26.4",
+  "orthogonalized": false,
+  "persistence_Kt": 2.0,
+  "perturbation_schema_version": "d5_generic_trig_v1",
+  "phi0": 0.85,
+  "python_version": "3.9.21",
+  "rtol": 1e-09,
+  "sample_correlation": -1.249000902703301e-16,
+  "schema_version": "2.0",
+  "scipy_version": "1.12.0",
+  "seed": null,
+  "sigma_std_empirical": [
+    0.10000000000000003,
+    0.2999999999999999
+  ],
+  "sigma_std_target": [
+    0.1,
+    0.3
+  ],
+  "source_fingerprint": "7bdb3b82b011d65d172a1901a6a0bf1e05a7f808aa73abd177cc74ad5194f217",
+  "tau_max": 18.0,
+  "theta_block_values": [
+    0.3,
+    1.05
+  ],
+  "variance_empirical": [
+    0.010000000000000005,
+    0.08999999999999994
+  ]
+}

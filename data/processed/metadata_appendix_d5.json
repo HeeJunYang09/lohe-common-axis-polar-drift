@@ -1,0 +1,54 @@
+{
+  "appendix_package_hash": "283a4a5dfca9862b1a7093c700561994ac040325ddf95b6980e5920265cc1b6d",
+  "created_utc": "2026-07-13T04:42:40.944684+00:00",
+  "experiment": "appendix_d5_diagnostics",
+  "phase_a_source_config_hash": "4a897e315aa8b797d65b3fcc28487e594964c77011f309e246c0181494989c30",
+  "schema_version": "appendix_d5_metadata_v1",
+  "source_fingerprint": "7bdb3b82b011d65d172a1901a6a0bf1e05a7f808aa73abd177cc74ad5194f217",
+  "vector_feasibility": [
+    {
+      "K": 8.0,
+      "median_alignment": 0.9999989794184387,
+      "median_scaled_residual": 0.005216416727766433,
+      "reason": "",
+      "rho": 0.052969128007574154,
+      "status": "reported",
+      "valid_point_count": 1952,
+      "vector_L2_error": 0.0017353564747073682,
+      "velocity_floor": 4.926441386666398e-06
+    },
+    {
+      "K": 10.0,
+      "median_alignment": 0.9999993468305928,
+      "median_scaled_residual": 0.0049602916065710915,
+      "reason": "",
+      "rho": 0.04237530240605932,
+      "status": "reported",
+      "valid_point_count": 1949,
+      "vector_L2_error": 0.0013162428027228997,
+      "velocity_floor": 3.941223671002765e-06
+    },
+    {
+      "K": 12.0,
+      "median_alignment": 0.9999995463895464,
+      "median_scaled_residual": 0.004815738845603384,
+      "reason": "",
+      "rho": 0.035312752005049436,
+      "status": "reported",
+      "valid_point_count": 1947,
+      "vector_L2_error": 0.0010629058222779593,
+      "velocity_floor": 3.2843874906123036e-06
+    },
+    {
+      "K": 16.0,
+      "median_alignment": 0.9999997448316907,
+      "median_scaled_residual": 0.004667376926410457,
+      "reason": "",
+      "rho": 0.026484564003787077,
+      "status": "reported",
+      "valid_point_count": 1944,
+      "vector_L2_error": 0.000771029573229165,
+      "velocity_floor": 2.4631810395041052e-06
+    }
+  ]
+}
