@@ -12,7 +12,6 @@ to generate Figures 1--6 of the manuscript:
 - `data/cache/`: processed NumPy cache files used for exact figure reproduction
 - `data/processed/`: summaries generated when the scripts run
 - `figures/`: final manuscript PDF figures. The scripts can also generate PNG and EPS versions locally, but the public repository keeps the PDF outputs.
-- `paper/figure_mapping.md`: mapping between manuscript figures and files
 - `tests/`: pytest checks for the five-dimensional utility layer
 
 ## Installation
@@ -62,14 +61,21 @@ All canonical publication integrations use JAX x64 precision with
 CLI arguments. Figures 1--4 store the same precision and tolerance provenance
 inside their cache files and reject stale caches that do not match it.
 
-| Manuscript figure | Script | PDF output |
-|---|---|---|
-| Figure 1 | `scripts/fig01_fast_locking.py` | `figures/fig1_fast_locking.pdf` |
-| Figure 2 | `scripts/fig02_phase_gap_prediction.py` | `figures/fig2_phase_gap_prediction.pdf` |
-| Figure 3 | `scripts/fig03_slow_polar_drift.py` | `figures/fig3_slow_polar_drift_deterministic.pdf` |
-| Figure 4 | `scripts/fig04_hitting_time.py` | `figures/fig4_hitting_time_deterministic.pdf` |
-| Figure 5 | `scripts/fig05_gaussian_robustness.py` | `figures/fig5_gaussian_robustness.pdf` |
-| Figure 6 | `scripts/fig06_d5_block_selection.py` | `figures/fig6_d5_block_selection.pdf` |
+| Manuscript figure | Script | PDF output | Data source |
+|---|---|---|---|
+| Figure 1 | `scripts/fig01_fast_locking.py` | `figures/fig1_fast_locking.pdf` | `data/cache/fig01_fast_locking.npz` |
+| Figure 2 | `scripts/fig02_phase_gap_prediction.py` | `figures/fig2_phase_gap_prediction.pdf` | `data/cache/fig02_phase_gap_prediction.npz` |
+| Figure 3 | `scripts/fig03_slow_polar_drift.py` | `figures/fig3_slow_polar_drift_deterministic.pdf` | `data/cache/fig03_slow_polar_drift_deterministic_3x3.npz` |
+| Figure 4 | `scripts/fig04_hitting_time.py` | `figures/fig4_hitting_time_deterministic.pdf` | `data/cache/fig04_hitting_time_deterministic_5x5.npz` |
+| Figure 5 | `scripts/fig05_gaussian_robustness.py` | `figures/fig5_gaussian_robustness.pdf` | Gaussian caches from Figures 3 and 4, listed in `data/README.md` |
+| Figure 6 | `scripts/fig06_d5_block_selection.py` | `figures/fig6_d5_block_selection.pdf` | `data/cache/fig06_d5_block_selection.npz` |
+| Appendix Figure A.1 | `scripts/appendix_d5_diagnostics.py` | `figures/appendix_figA1_d5_ansatz_validation.pdf` | Figure 6 cache; `data/processed/appendix_d5_ansatz_scaling.csv` and `appendix_d5_vector_law.csv` |
+| Appendix Figure A.2 | `scripts/appendix_d5_diagnostics.py` | `figures/appendix_figA2_d5_controls_robustness.pdf` | `data/cache/appendix_d5_diagnostics.npz`; Appendix controls and sensitivity CSV files |
+
+The numerical values for Appendix Table A.1 are provided in
+`data/processed/appendix_tableA1_d5_diagnostics.csv`.
+This repository distributes numerical code, data, and figures, not manuscript
+TeX sources.
 
 ## Notes on Runtime and Cache Files
 
@@ -200,6 +206,16 @@ not a replacement for the canonical publication tolerance policy.
 
 Package versions used for the tested numerical stack are listed in
 `requirements-lock.txt`.
+
+## Additional Numerical Experiments
+
+Additional numerical experiments examine the target-angle dependence of the
+hitting-time law and the sensitivity of the two-time-scale dynamics to
+initial conditions. Their scripts, compact data, figures, and reproduction
+instructions are available in
+[`additional_experiments/`](additional_experiments/README.md).
+These supplementary computations are separate from manuscript Figures 1--6
+and do not replace their original code, caches, or figures.
 
 ## Contact
 

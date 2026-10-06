@@ -939,66 +939,9 @@ def write_appendix_table(vector_rows: Sequence[Mapping[str, Any]]) -> List[Dict[
         )
     columns = list(out_rows[0])
     _write_csv(PROCESSED_DIR / "appendix_tableA1_d5_diagnostics.csv", out_rows, columns)
-    write_appendix_table_tex(out_rows)
     return out_rows
 
 
-def fmt_table_value(value: Any, key: str | None = None) -> str:
-    if value in ("", None):
-        return r"--"
-    try:
-        x = float(value)
-    except Exception:
-        return str(value)
-    if not np.isfinite(x):
-        return r"--"
-    if key == "median_alignment":
-        return f"{x:.8f}"
-    if key in {"Kt_f_Ctol_5", "Kt_f_Ctol_1"}:
-        return f"{x:.4f}".rstrip("0").rstrip(".")
-    if key in {"sphere_norm_error", "max_block_weight_sum_error", "vector_L2_error"}:
-        return f"{x:.2e}"
-    if abs(x) >= 100 or (abs(x) < 0.01 and x != 0):
-        return f"{x:.2e}"
-    return f"{x:.4g}"
-
-
-def write_appendix_table_tex(rows: Sequence[Mapping[str, Any]]) -> None:
-    path = PROJECT_ROOT / "paper" / "appendix_tableA1_d5_diagnostics.tex"
-    lines = [
-        r"\begin{tabular}{rrrrrrrr}",
-        r"\multicolumn{8}{c}{(a) Ansatz and validity diagnostics}\\",
-        r"$K$ & $\rho$ & $Kt_f^{(5)}$ & $Kt_f^{(1)}$ & median $R_{\rm ans}/\rho^2$ & p95 $R_{\rm ans}/\rho^2$ & median $E_\phi/\rho^2$ & p95 $E_\phi/\rho^2$\\",
-        r"\hline",
-    ]
-    for row in rows:
-        lines.append(
-            " & ".join(
-                fmt_table_value(row[key], key)
-                for key in ["K", "rho", "Kt_f_Ctol_5", "Kt_f_Ctol_1", "median_R_ans_over_rho2", "p95_R_ans_over_rho2", "median_E_phi_over_rho2", "p95_E_phi_over_rho2"]
-            )
-            + r"\\"
-        )
-    lines.extend(
-        [
-            r"\end{tabular}",
-            r"\vspace{0.6em}",
-            r"\begin{tabular}{rrrrrrrr}",
-            r"\multicolumn{8}{c}{(b) Geometric and numerical validity}\\",
-            r"$K$ & median $D_u/\rho$ & $\min\|\bar u\|$ & $\min_{i,t}\sin\phi_i$ & vector $L^2$ error & median alignment & sphere error & weight-sum error\\",
-            r"\hline",
-        ]
-    )
-    for row in rows:
-        lines.append(
-            " & ".join(
-                fmt_table_value(row[key], key)
-                for key in ["K", "median_D_u_over_rho", "min_mean_transverse_norm", "min_sin_phi", "vector_L2_error", "median_alignment", "sphere_norm_error", "max_block_weight_sum_error"]
-            )
-            + r"\\"
-        )
-    lines.append(r"\end{tabular}")
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def plot_appendix_A1(residual_rows: Sequence[Mapping[str, Any]], vector_rows: Sequence[Mapping[str, Any]]) -> None:
@@ -1167,7 +1110,6 @@ def write_appendix_validation_report(package_hash: str, vector_rows: Sequence[Ma
         "data/processed/appendix_d5_controls.csv",
         "data/processed/appendix_d5_sensitivity.csv",
         "data/processed/appendix_tableA1_d5_diagnostics.csv",
-        "paper/appendix_tableA1_d5_diagnostics.tex",
         "data/processed/appendix_d5_config_registry.json",
         "data/processed/appendix_migration_equality_report.json",
         "figures/appendix_figA1_d5_ansatz_validation.pdf",
@@ -1390,7 +1332,6 @@ def _main_impl(argv: Sequence[str] | None = None) -> int:
         PROCESSED_DIR / "appendix_d5_controls.csv",
         PROCESSED_DIR / "appendix_d5_sensitivity.csv",
         PROCESSED_DIR / "appendix_tableA1_d5_diagnostics.csv",
-        PROJECT_ROOT / "paper" / "appendix_tableA1_d5_diagnostics.tex",
         FIGURE_DIR / "appendix_figA1_d5_ansatz_validation.pdf",
         FIGURE_DIR / "appendix_figA1_d5_ansatz_validation.png",
         FIGURE_DIR / "appendix_figA1_d5_ansatz_validation.eps",

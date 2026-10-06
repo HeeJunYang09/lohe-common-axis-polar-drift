@@ -612,7 +612,7 @@ def _copy_current_d5_validation_fixture(tmp_path: Path):
             "data/processed/run_receipt_regression_fig1_4.json",
             "data/processed/failures_exp06_d5_block_selection.json",
             "figures/fig6_d5_block_selection.eps",
-            "paper/figure_mapping.md",
+            "README.md",
         ]
     )
     missing = [rel for rel in sorted(required) if not (PROJECT_ROOT / rel).exists()]

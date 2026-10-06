@@ -1,0 +1,565 @@
+{
+  "expected": 13,
+  "completed": 13,
+  "passed": true,
+  "cases": [
+    {
+      "case_id": "d3_K8_s0.16_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K8_s0.20_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K8_s0.24_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K10_s0.16_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K10_s0.20_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K10_s0.24_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K12_s0.16_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K12_s0.20_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d3_K12_s0.24_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig03_slow_polar_drift_deterministic_3x3.npz",
+      "reference_sha256": "bca8cbb918a497223bf84821e745bbefdf0e52acf112978ba926641ad6f8f62c",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "D_meas": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "Lambda_K": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rate_ratio": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "sphere_error_max": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "rho": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d5_K8_s0.00_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig06_d5_block_selection.npz",
+      "reference_sha256": "a9d8c1d199cbd3ff6c7903954d47db010ec2f25e5a621e8e23d8bf8f25a477fe",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_bar": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "E_phi": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "R_ans": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_sim": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "post_fast_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "polar_metric_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "initial_state": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d5_K10_s0.00_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig06_d5_block_selection.npz",
+      "reference_sha256": "a9d8c1d199cbd3ff6c7903954d47db010ec2f25e5a621e8e23d8bf8f25a477fe",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_bar": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "E_phi": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "R_ans": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_sim": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "post_fast_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "polar_metric_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "initial_state": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d5_K12_s0.00_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig06_d5_block_selection.npz",
+      "reference_sha256": "a9d8c1d199cbd3ff6c7903954d47db010ec2f25e5a621e8e23d8bf8f25a477fe",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_bar": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "E_phi": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "R_ans": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_sim": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "post_fast_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "polar_metric_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "initial_state": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    },
+    {
+      "case_id": "d5_K16_s0.00_A_a0.00_seed-1",
+      "passed": true,
+      "reference_file": "data/cache/fig06_d5_block_selection.npz",
+      "reference_sha256": "a9d8c1d199cbd3ff6c7903954d47db010ec2f25e5a621e8e23d8bf8f25a477fe",
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "fields": {
+        "ts": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_bar": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "phi_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "E_phi": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "R_ans": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_sim": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "p_red": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "post_fast_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "polar_metric_valid_mask": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "initial_state": {
+          "passed": true,
+          "exact_equal": true
+        },
+        "t_f_num": {
+          "passed": true,
+          "exact_equal": true
+        }
+      }
+    }
+  ]
+}

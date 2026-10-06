@@ -459,7 +459,6 @@ APPENDIX_D5_REQUIRED_FILES = [
     "data/processed/appendix_d5_controls.csv",
     "data/processed/appendix_d5_sensitivity.csv",
     "data/processed/appendix_tableA1_d5_diagnostics.csv",
-    "paper/appendix_tableA1_d5_diagnostics.tex",
     "data/processed/appendix_d5_config_registry.json",
     "data/processed/metadata_appendix_d5.json",
     "data/processed/validation_report_appendix_d5.json",
@@ -479,7 +478,6 @@ APPENDIX_D5_PUBLIC_FILES = [
     "data/processed/appendix_d5_controls.csv",
     "data/processed/appendix_d5_sensitivity.csv",
     "data/processed/appendix_tableA1_d5_diagnostics.csv",
-    "paper/appendix_tableA1_d5_diagnostics.tex",
     "data/processed/appendix_d5_config_registry.json",
     "data/processed/metadata_appendix_d5.json",
     "figures/appendix_figA1_d5_ansatz_validation.pdf",
@@ -1011,13 +1009,6 @@ def validate_appendix_d5_completion(
         _, rows = _csv_rows(table_path)
         if len(rows) != 4:
             errors.append("Appendix Table A.1 CSV row count is not four")
-    table_tex = project_root / "paper/appendix_tableA1_d5_diagnostics.tex"
-    if table_tex.exists():
-        text = table_tex.read_text(encoding="utf-8")
-        if "(a)" not in text or "(b)" not in text:
-            errors.append("Appendix Table A.1 TeX does not contain both panel labels")
-        if "\\begin{table}" in text or "\\end{table}" in text:
-            errors.append("Appendix Table A.1 TeX should not wrap itself in a table float")
     phase_a_hash = None
     cache_path = project_root / "data/cache/fig06_d5_block_selection.npz"
     if cache_path.exists():
@@ -1895,7 +1886,6 @@ def write_release_manifest(path: Path, conf_hash: str) -> None:
         "data/processed/appendix_d5_controls.csv",
         "data/processed/appendix_d5_sensitivity.csv",
         "data/processed/appendix_tableA1_d5_diagnostics.csv",
-        "paper/appendix_tableA1_d5_diagnostics.tex",
         "data/processed/appendix_d5_config_registry.json",
         "data/processed/metadata_appendix_d5.json",
         "data/processed/validation_report_appendix_d5.json",

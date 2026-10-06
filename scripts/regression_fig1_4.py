@@ -41,7 +41,6 @@ GLOBAL_ALLOWED_SELF_ARTIFACTS = {
 }
 GLOBAL_ALLOWED_RESTORED_SIDE_EFFECTS: set[str] = set()
 GLOBAL_ALLOWED_D5_APPENDIX_ARTIFACTS = {
-    "paper/figure_mapping.md",
     "data/cache/appendix_d5_diagnostics.npz",
     "data/cache/fig06_d5_block_selection.npz",
     "data/processed/appendix_d5_ansatz_scaling.csv",
@@ -166,7 +165,7 @@ def file_record(rel: str) -> dict[str, Any]:
 
 
 def global_manifest_files() -> list[str]:
-    files: set[str] = set(PROTECTED_SOURCES + ["paper/figure_mapping.md"])
+    files: set[str] = set(PROTECTED_SOURCES + ["README.md"])
     for root_rel in GLOBAL_SCAN_ROOTS:
         root = PROJECT_ROOT / root_rel
         if not root.exists():
@@ -212,7 +211,7 @@ def load_snapshot_records(baseline_dir: Path) -> dict[str, dict[str, Any]]:
 
 
 def parse_figure_mapping() -> dict[str, str]:
-    text = (PROJECT_ROOT / "paper/figure_mapping.md").read_text(encoding="utf-8")
+    text = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
     mapping: dict[str, str] = {}
     for line in text.splitlines():
         if not line.startswith("| Figure "):
@@ -222,6 +221,8 @@ def parse_figure_mapping() -> dict[str, str]:
             continue
         figure = parts[0]
         script = parts[1].strip("`")
+        if figure in mapping:
+            raise ValueError(f"Duplicate figure entry in README: {figure}")
         mapping[figure] = script
     return {key: mapping[key] for key in sorted(mapping) if key in {"Figure 1", "Figure 2", "Figure 3", "Figure 4"}}
 
@@ -275,8 +276,8 @@ def compare_global_legacy_artifacts(before: dict[str, dict[str, Any]]) -> dict[s
                 entry["classification"] = "unexpected_legacy_scientific_change"
                 unexpected.append(entry)
             changes.append(entry)
-    mapping_before = before.get("paper/figure_mapping.md", {})
-    mapping_after = file_record("paper/figure_mapping.md")
+    mapping_before = before.get("README.md", {})
+    mapping_after = file_record("README.md")
     return {
         "status": "passed" if not unexpected else "failed",
         "changes": changes,
@@ -372,7 +373,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     all_files = sorted(
         set(global_manifest_files())
-        | set(PROTECTED_SOURCES + ["paper/figure_mapping.md"])
+        | set(PROTECTED_SOURCES + ["README.md"])
         | {item for fig in FIGURES for item in [fig["script"], *fig["cache"], *fig["processed"], *fig["figures"]]}
     )
     if args.snapshot_only:

@@ -1,0 +1,1644 @@
+{
+  "C_tol": 5.0,
+  "K_values": [
+    6.0,
+    7.5,
+    9.0,
+    10.5,
+    12.0
+  ],
+  "N": 28,
+  "all_targets_reached": true,
+  "atol": 1e-11,
+  "baseline_horizon": 300.0,
+  "baseline_num_save": 2200,
+  "c_init": 0.3,
+  "case_count": 25,
+  "continuation_horizon": 450.0,
+  "continuation_num_save": 1101,
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "diffrax": "0.5.0",
+  "error_definitions": {
+    "relative_error_interval": "abs(interval_sim-interval_pred)/interval_pred",
+    "relative_error_slow": "abs((T_sim-t_f)-(T_pred-t_f))/(T_pred-t_f)",
+    "relative_error_total": "abs(T_sim-T_pred)/T_sim"
+  },
+  "eta082_regression": {
+    "all_fields_exact_equal": true,
+    "cases": [
+      {
+        "K": 6.0,
+        "all_fields_exact_equal": true,
+        "case_index": 0,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.006675573436956211,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.006675573436956211,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 9.05711348720821,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 9.05711348720821,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 9.079099383187403,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 9.079099383187403,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8496256404506927,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8496256404506927,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.002421594373105485,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.002421594373105485,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.2
+      },
+      {
+        "K": 6.0,
+        "all_fields_exact_equal": true,
+        "case_index": 1,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.009618490675457532,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.009618490675457532,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 6.269765645346258,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 6.269765645346258,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 6.314786987645251,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 6.314786987645251,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.85,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.85,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.007129510842895608,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.007129510842895608,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.24
+      },
+      {
+        "K": 6.0,
+        "all_fields_exact_equal": true,
+        "case_index": 2,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.01310097036219451,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.01310097036219451,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 4.6031462349606675,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.6031462349606675,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 4.647866515928139,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.647866515928139,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.85,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.85,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.009621679283218642,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.009621679283218642,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.28
+      },
+      {
+        "K": 6.0,
+        "all_fields_exact_equal": true,
+        "case_index": 3,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.01712528098112334,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.01712528098112334,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 3.5214419234078567,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 3.5214419234078567,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 3.5658523204452264,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 3.5658523204452264,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.85,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.85,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.012454356783857133,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.012454356783857133,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.32
+      },
+      {
+        "K": 6.0,
+        "all_fields_exact_equal": true,
+        "case_index": 4,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.021694059674450296,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.021694059674450296,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 2.7798246756041904,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 2.7798246756041904,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 2.8239163673810097,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 2.8239163673810097,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8499999999999999,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8499999999999999,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0156136677013956,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0156136677013956,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.36
+      },
+      {
+        "K": 7.5,
+        "all_fields_exact_equal": true,
+        "case_index": 5,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.005337889248366103,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.005337889248366103,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 11.319166843394143,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 11.319166843394143,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 11.33414853555482,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 11.33414853555482,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8496958204006704,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8496958204006704,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0013218189362598134,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0013218189362598134,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.2
+      },
+      {
+        "K": 7.5,
+        "all_fields_exact_equal": true,
+        "case_index": 6,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.007689454201541264,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.007689454201541264,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 7.8641104068856755,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 7.8641104068856755,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 7.878947424307239,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 7.878947424307239,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8495616570852211,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8495616570852211,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.001883121770274827,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.001883121770274827,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.24
+      },
+      {
+        "K": 7.5,
+        "all_fields_exact_equal": true,
+        "case_index": 7,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.010470863889598106,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.010470863889598106,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 5.759379840375484,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 5.759379840375484,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 5.795491222556634,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 5.795491222556634,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.85,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.85,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.006230944158900753,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.006230944158900753,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.28
+      },
+      {
+        "K": 7.5,
+        "all_fields_exact_equal": true,
+        "case_index": 8,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.013683270233600458,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.013683270233600458,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 4.407256552529462,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.407256552529462,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 4.443176621866913,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.443176621866913,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.85,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.85,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.008084321735191018,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.008084321735191018,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.32
+      },
+      {
+        "K": 7.5,
+        "all_fields_exact_equal": true,
+        "case_index": 9,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.017328008728552908,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.017328008728552908,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 3.480243075922296,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 3.480243075922296,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 3.5159688393409345,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 3.5159688393409345,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8500000000000002,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8500000000000002,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.01016100114963905,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.01016100114963905,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.36
+      },
+      {
+        "K": 9.0,
+        "all_fields_exact_equal": true,
+        "case_index": 10,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.004447079603987164,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.004447079603987164,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 13.580602866920984,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 13.580602866920984,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 13.59126672858064,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 13.59126672858064,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8497429736792587,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8497429736792587,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0007846113149432871,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0007846113149432871,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.2
+      },
+      {
+        "K": 9.0,
+        "all_fields_exact_equal": true,
+        "case_index": 11,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.006405467098039305,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.006405467098039305,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 9.43454973254587,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 9.43454973254587,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 9.445123343323099,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 9.445123343323099,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8496296675527818,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8496296675527818,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0011194783162576042,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0011194783162576042,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.24
+      },
+      {
+        "K": 9.0,
+        "all_fields_exact_equal": true,
+        "case_index": 12,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.008721245792801346,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.008721245792801346,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 6.934595290833887,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 6.934595290833887,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 6.945076885287618,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 6.945076885287618,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8494956192034504,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8494956192034504,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.001509212155150535,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.001509212155150535,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.28
+      },
+      {
+        "K": 9.0,
+        "all_fields_exact_equal": true,
+        "case_index": 13,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.011395079336690478,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.011395079336690478,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 5.312015155861439,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 5.312015155861439,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 5.322402878514279,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 5.322402878514279,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8493407695851358,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8493407695851358,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.001951697924780181,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.001951697924780181,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.32
+      },
+      {
+        "K": 9.0,
+        "all_fields_exact_equal": true,
+        "case_index": 14,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.014427736013186277,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.014427736013186277,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 4.179843763564178,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.179843763564178,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 4.2098576793443225,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.2098576793443225,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.85,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.85,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.007129437160645075,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.007129437160645075,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.0,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.36
+      },
+      {
+        "K": 10.5,
+        "all_fields_exact_equal": true,
+        "case_index": 15,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.0038111827506895524,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0038111827506895524,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 15.841748711641344,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 15.841748711641344,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 15.849594518547839,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 15.849594518547839,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8497769552150575,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8497769552150575,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.000495016254031835,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.000495016254031835,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.2
+      },
+      {
+        "K": 10.5,
+        "all_fields_exact_equal": true,
+        "case_index": 16,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.005489155574766788,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.005489155574766788,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 11.004697424066249,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 11.004697424066249,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 11.012483398348902,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 11.012483398348902,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8496786635127511,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8496786635127511,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0007070134865147927,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0007070134865147927,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.24
+      },
+      {
+        "K": 10.5,
+        "all_fields_exact_equal": true,
+        "case_index": 17,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.007473044947712522,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.007473044947712522,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 8.088094903352912,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 8.088094903352912,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 8.095819511758702,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 8.095819511758702,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8495624027615064,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8495624027615064,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0009541478036373994,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0009541478036373994,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.28
+      },
+      {
+        "K": 10.5,
+        "all_fields_exact_equal": true,
+        "case_index": 18,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.009763267670958996,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.009763267670958996,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 6.195096026182748,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 6.195096026182748,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 6.202757937127134,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 6.202757937127134,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.849428133083675,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.849428133083675,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0012352426165988628,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0012352426165988628,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.32
+      },
+      {
+        "K": 10.5,
+        "all_fields_exact_equal": true,
+        "case_index": 19,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.012360305837040373,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.012360305837040373,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 4.897251742340289,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.897251742340289,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 4.904851221189984,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 4.904851221189984,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8492758106254321,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8492758106254321,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0015493800947242735,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0015493800947242735,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.36
+      },
+      {
+        "K": 12.0,
+        "all_fields_exact_equal": true,
+        "case_index": 20,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.0033344444692670182,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0033344444692670182,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 18.10275890496257,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 18.10275890496257,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 18.10868851674836,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 18.10868851674836,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8498026824892594,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8498026824892594,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0003274456778194703,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0003274456778194703,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.2
+      },
+      {
+        "K": 12.0,
+        "all_fields_exact_equal": true,
+        "case_index": 21,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.004802304722275656,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.004802304722275656,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 12.574708604529755,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 12.574708604529755,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 12.580597362976604,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 12.580597362976604,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8497157499135383,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8497157499135383,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.00046808257803234387,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.00046808257803234387,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.24
+      },
+      {
+        "K": 12.0,
+        "all_fields_exact_equal": true,
+        "case_index": 22,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.006537604585751873,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.006537604585751873,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 9.241457034865528,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 9.241457034865528,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 9.24730376614812,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 9.24730376614812,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8496129400224817,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8496129400224817,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0006322633526969382,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0006322633526969382,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.28
+      },
+      {
+        "K": 12.0,
+        "all_fields_exact_equal": true,
+        "case_index": 23,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.00854062279738574,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.00854062279738574,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 7.0780383415145005,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 7.0780383415145005,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 7.083842678189423,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 7.083842678189423,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8494942243558953,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8494942243558953,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0008193768465233094,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0008193768465233094,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.32
+      },
+      {
+        "K": 12.0,
+        "all_fields_exact_equal": true,
+        "case_index": 24,
+        "fields": {
+          "Lambda_K": {
+            "absolute_difference": 0.0,
+            "actual": 0.010811681574846896,
+            "atol": 1e-14,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.010811681574846896,
+            "rtol": 1e-09
+          },
+          "T_pred": {
+            "absolute_difference": 0.0,
+            "actual": 5.594796466455313,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 5.594796466455313,
+            "rtol": 1e-09
+          },
+          "T_sim": {
+            "absolute_difference": 0.0,
+            "actual": 5.600557121136303,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 5.600557121136303,
+            "rtol": 1e-09
+          },
+          "phi_tf": {
+            "absolute_difference": 0.0,
+            "actual": 0.8493595718080593,
+            "atol": 1e-10,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.8493595718080593,
+            "rtol": 1e-09
+          },
+          "relative_error": {
+            "absolute_difference": 0.0,
+            "actual": 0.0010285860060688153,
+            "atol": 1e-08,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.0010285860060688153,
+            "rtol": 1e-09
+          },
+          "tf_num": {
+            "absolute_difference": 0.0,
+            "actual": 0.1364256480218281,
+            "atol": 1e-12,
+            "exact_equal": true,
+            "passed": true,
+            "reference": 0.1364256480218281,
+            "rtol": 1e-09
+          }
+        },
+        "passed": true,
+        "sigma_omega": 0.36
+      }
+    ],
+    "passed": true,
+    "reference_path": "data/cache/fig04_hitting_time_deterministic_5x5.npz",
+    "reference_sha256": "330166fe480e095f84e657767f24b323ae856b436c1c77f8f6829b63b8c41eb8"
+  },
+  "eta_values": [
+    0.84,
+    0.82,
+    0.7,
+    0.5,
+    0.3
+  ],
+  "hitting_definition": "First linearly interpolated crossing phi_bar <= eta after the fixed numerical fast time.",
+  "jax": "0.4.23",
+  "jax_x64": true,
+  "matplotlib": "3.9.2",
+  "numpy": "1.26.4",
+  "omega_bar": 0.5,
+  "phi0": 0.85,
+  "python": "3.9.21 (main, Dec 11 2024, 16:24:11) \n[GCC 11.2.0]",
+  "refinement_definition": "Half saved-time spacing at the same solver tolerances; fixed coarse fast times.",
+  "refinement_max_relative_difference_slow": 2.591286946017053e-06,
+  "rtol": 1e-09,
+  "schema": "multi_target_hitting_time_x64_v1",
+  "scipy": "1.12.0",
+  "sigma_values": [
+    0.2,
+    0.24,
+    0.28,
+    0.32,
+    0.36
+  ],
+  "sphere_norm_error_max": 1.7891995662822069e-09,
+  "target_record_count": 125,
+  "tf_definition": "First original saved time with E_lock <= 5*rho^2; failure is not replaced by argmin.",
+  "theta0": 0.3,
+  "wall_seconds_this_invocation": 21.507556148804724,
+  "storage": "Existing numerical results exported without reintegration; compact diagnostics only."
+}

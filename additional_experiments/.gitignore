@@ -1,0 +1,6 @@
+# Full particle trajectories and machine-specific checks are generated locally.
+_work/
+__pycache__/
+.pytest_cache/
+*.pyc
+**/figures/*.png
